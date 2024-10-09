@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JDialogFormInfo">
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="2"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jPanel1" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Container class="javax.swing.JPanel" name="jPanel1">
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Component id="jButtonAlta" min="-2" pref="87" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jLabelNombre" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabelApellidos" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabelProvincia" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jLabelFechaDeAlta" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                              <Component id="jSpinnerFechaAlta" max="32767" attributes="0"/>
+                              <Component id="jTextFieldNombre" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jTextFieldApellidos" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jComboBoxProvincia" pref="180" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabelNombre" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jTextFieldNombre" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabelApellidos" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jTextFieldApellidos" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabelFechaDeAlta" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jSpinnerFechaAlta" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabelProvincia" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jComboBoxProvincia" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="24" max="32767" attributes="0"/>
+                  <Component id="jButtonAlta" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="jLabelNombre">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Nombre:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabelApellidos">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Apellidos:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabelFechaDeAlta">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Fecha de alta:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabelProvincia">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Provincia:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldNombre">
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldApellidos">
+        </Component>
+        <Component class="javax.swing.JSpinner" name="jSpinnerFechaAlta">
+          <Properties>
+            <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
+              <SpinnerModel initial="now" stepSize="5" type="date"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="jComboBoxProvincia">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="52">
+                <StringItem index="0" value="A Coru&#xf1;a"/>
+                <StringItem index="1" value="&#xc1;lava"/>
+                <StringItem index="2" value="Albacete"/>
+                <StringItem index="3" value="Alicante"/>
+                <StringItem index="4" value="Almer&#xed;a"/>
+                <StringItem index="5" value="Asturias"/>
+                <StringItem index="6" value="&#xc1;vila"/>
+                <StringItem index="7" value="Badajoz"/>
+                <StringItem index="8" value="Baleares"/>
+                <StringItem index="9" value="Barcelona"/>
+                <StringItem index="10" value="Burgos"/>
+                <StringItem index="11" value="C&#xe1;ceres"/>
+                <StringItem index="12" value="C&#xe1;diz"/>
+                <StringItem index="13" value="Cantabria"/>
+                <StringItem index="14" value="Castell&#xf3;n"/>
+                <StringItem index="15" value="Ceuta"/>
+                <StringItem index="16" value="Ciudad Real"/>
+                <StringItem index="17" value="C&#xf3;rdoba"/>
+                <StringItem index="18" value="Cuenca"/>
+                <StringItem index="19" value="Girona"/>
+                <StringItem index="20" value="Granada"/>
+                <StringItem index="21" value="Guadalajara"/>
+                <StringItem index="22" value="Gipuzkoa"/>
+                <StringItem index="23" value="Huelva"/>
+                <StringItem index="24" value="Huesca"/>
+                <StringItem index="25" value="Ja&#xe9;n"/>
+                <StringItem index="26" value="La Rioja"/>
+                <StringItem index="27" value="Las Palmas"/>
+                <StringItem index="28" value="Le&#xf3;n"/>
+                <StringItem index="29" value="L&#xe9;rida"/>
+                <StringItem index="30" value="Lugo"/>
+                <StringItem index="31" value="Madrid"/>
+                <StringItem index="32" value="M&#xe1;laga"/>
+                <StringItem index="33" value="Melilla"/>
+                <StringItem index="34" value="Murcia"/>
+                <StringItem index="35" value="Navarra"/>
+                <StringItem index="36" value="Ourense"/>
+                <StringItem index="37" value="Palencia"/>
+                <StringItem index="38" value="Pontevedra"/>
+                <StringItem index="39" value="Salamanca"/>
+                <StringItem index="40" value="Segovia"/>
+                <StringItem index="41" value="Sevilla"/>
+                <StringItem index="42" value="Soria"/>
+                <StringItem index="43" value="Tarragona"/>
+                <StringItem index="44" value="Santa Cruz de Tenerife"/>
+                <StringItem index="45" value="Teruel"/>
+                <StringItem index="46" value="Toledo"/>
+                <StringItem index="47" value="Valencia"/>
+                <StringItem index="48" value="Valladolid"/>
+                <StringItem index="49" value="Vizcaya"/>
+                <StringItem index="50" value="Zamora"/>
+                <StringItem index="51" value="Zaragoza"/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JButton" name="jButtonAlta">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Alta"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonAltaActionPerformed"/>
+          </Events>
+        </Component>
+      </SubComponents>
+    </Container>
+  </SubComponents>
+</Form>
