@@ -19,16 +19,16 @@ public class LogicaNegocio {
 
     public LogicaNegocio() {
         listaClientes=new ArrayList<>();
-        listaClientes.add(new Cliente("Raul Perez",new Date("08-10-2024"),new Date("10-10-2024"),5,"Simple"));
-        listaClientes.add(new Cliente("Juan Rodriguez",new Date("04-10-2024"),new Date("12-10-2024"),4,"Doble"));
-        listaClientes.add(new Cliente("Paco Sanchez",new Date("05-10-2024"),new Date("13-10-2024"),6,"Simple"));
-        listaClientes.add(new Cliente("Laura Martinez",new Date("06-10-2024"),new Date("10-10-2024"),10,"Doble"));
-        listaClientes.add(new Cliente("Nerea Fernandez",new Date("02-10-2024"),new Date("12-10-2024"),8,"Deluxe"));
-        listaClientes.add(new Cliente("Pablo Rodriguez",new Date("08-10-2024"),new Date("11-10-2024"),1,"Doble"));
-        listaClientes.add(new Cliente("Mauro Lopez",new Date("07-10-2024"),new Date("15-10-2024"),3,"Deluxe"));
-        listaClientes.add(new Cliente("Celia Blanco",new Date("05-10-2024"),new Date("10-10-2024"),2,"Simple"));
-        listaClientes.add(new Cliente("Claudia Martinez",new Date("01-10-2024"),new Date("09-10-2024"),8,"Simple"));
-        listaClientes.add(new Cliente("Jose Pitillo",new Date("05-10-2024"),new Date("12-10-2024"),14,"Simple"));
+        listaClientes.add(new Cliente("Raul Perez","08/10/2024","10/10/2024",5,"Simple"));
+        listaClientes.add(new Cliente("Juan Rodriguez","10/10/2024","12/10/2024",4,"Doble"));
+        listaClientes.add(new Cliente("Paco Sanchez","06/10/2024","13/10/2024",6,"Simple"));
+        listaClientes.add(new Cliente("Laura Martinez","04/10/2024","10/10/2024",10,"Doble"));
+        listaClientes.add(new Cliente("Nerea Fernandez","11/10/2024","14/10/2024",8,"Deluxe"));
+        listaClientes.add(new Cliente("Pablo Rodriguez","08/10/2024","12/10/2024",1,"Doble"));
+        listaClientes.add(new Cliente("Mauro Lopez","04/10/2024","08/10/2024",3,"Deluxe"));
+        listaClientes.add(new Cliente("Celia Blanco","10/10/2024","14/10/2024",2,"Simple"));
+        listaClientes.add(new Cliente("Claudia Martinez","09/10/2024","10/10/2024",8,"Simple"));
+        listaClientes.add(new Cliente("Jose Pitillo","02/10/2024","15/10/2024",14,"Simple"));
     }
 
     public List<Cliente> getListaClientes() {

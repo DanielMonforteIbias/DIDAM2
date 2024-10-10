@@ -5,20 +5,18 @@
  */
 package practica6ut2.beans;
 
-import java.util.Date;
-
 /**
  *
  * @author Tarde
  */
 public class Cliente {
     private String nombreCompleto;
-    private Date checkin;
-    private Date checkout;
+    private String checkin;
+    private String checkout;
     private int numHabitacion;
     private String tipoHabitacion;
 
-    public Cliente(String nombreCompleto, Date checkin, Date checkout, int numHabitacion, String tipoHabitacion) {
+    public Cliente(String nombreCompleto, String checkin, String checkout, int numHabitacion, String tipoHabitacion) {
         this.nombreCompleto = nombreCompleto;
         this.checkin = checkin;
         this.checkout = checkout;
@@ -30,11 +28,11 @@ public class Cliente {
         return nombreCompleto;
     }
 
-    public Date getCheckin() {
+    public String getCheckin() {
         return checkin;
     }
 
-    public Date getCheckout() {
+    public String getCheckout() {
         return checkout;
     }
 
