@@ -43,6 +43,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel = new javax.swing.JPanel();
         jLabelTitulo = new javax.swing.JLabel();
         jTextFieldPalabra = new javax.swing.JTextField();
         jButtonIngresar = new javax.swing.JButton();
@@ -52,15 +53,30 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabelTitulo.setText("Ingrese palabra:");
+        jPanel.setBackground(new java.awt.Color(235, 235, 255));
+        jPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabelTitulo.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        jLabelTitulo.setText("Ingrese palabra:");
+        jPanel.add(jLabelTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 17, -1, -1));
+
+        jTextFieldPalabra.setBackground(new java.awt.Color(204, 204, 255));
+        jTextFieldPalabra.setFont(new java.awt.Font("Georgia", 1, 12)); // NOI18N
+        jPanel.add(jTextFieldPalabra, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, 150, 30));
+
+        jButtonIngresar.setBackground(new java.awt.Color(204, 204, 255));
+        jButtonIngresar.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         jButtonIngresar.setText("Ingresar");
+        jButtonIngresar.setFocusPainted(false);
         jButtonIngresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonIngresarActionPerformed(evt);
             }
         });
+        jPanel.add(jButtonIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 270, -1));
 
+        jTablePalabras.setBackground(new java.awt.Color(204, 204, 255));
+        jTablePalabras.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         jTablePalabras.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null}
@@ -69,45 +85,25 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 "Palabras"
             }
         ));
+        jTablePalabras.setOpaque(false);
         jScrollPane1.setViewportView(jTablePalabras);
 
+        jPanel.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 91, 270, 220));
+
+        jLabelAviso.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         jLabelAviso.setForeground(new java.awt.Color(255, 0, 0));
         jLabelAviso.setText("No hay palabras ingresadas");
+        jPanel.add(jLabelAviso, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 340, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButtonIngresar)
-                            .addComponent(jLabelTitulo))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextFieldPalabra, javax.swing.GroupLayout.DEFAULT_SIZE, 134, Short.MAX_VALUE))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabelAviso)
-                .addGap(52, 52, 52))
+            .addComponent(jPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 296, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelTitulo)
-                    .addComponent(jTextFieldPalabra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(29, 29, 29)
-                .addComponent(jButtonIngresar)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabelAviso)
-                .addContainerGap(18, Short.MAX_VALUE))
+            .addComponent(jPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 384, Short.MAX_VALUE)
         );
 
         pack();
@@ -175,6 +171,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton jButtonIngresar;
     private javax.swing.JLabel jLabelAviso;
     private javax.swing.JLabel jLabelTitulo;
+    private javax.swing.JPanel jPanel;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTablePalabras;
     private javax.swing.JTextField jTextFieldPalabra;

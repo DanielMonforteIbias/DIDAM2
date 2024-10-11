@@ -32,6 +32,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel = new javax.swing.JPanel();
         jLabelTitulo = new javax.swing.JLabel();
         jButtonIngresar = new javax.swing.JButton();
         jTextFieldPalabra = new javax.swing.JTextField();
@@ -43,66 +44,94 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jListConsonante = new javax.swing.JList<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
+        jPanel.setBackground(new java.awt.Color(255, 190, 190));
+
+        jLabelTitulo.setFont(new java.awt.Font("Tw Cen MT", 1, 16)); // NOI18N
         jLabelTitulo.setText("Ingrese palabra:");
 
+        jButtonIngresar.setBackground(new java.awt.Color(255, 227, 222));
+        jButtonIngresar.setFont(new java.awt.Font("Tw Cen MT", 1, 14)); // NOI18N
         jButtonIngresar.setText("Ingresar");
+        jButtonIngresar.setFocusPainted(false);
+        jButtonIngresar.setMargin(new java.awt.Insets(0, 0, 0, 0));
         jButtonIngresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonIngresarActionPerformed(evt);
             }
         });
 
+        jTextFieldPalabra.setBackground(new java.awt.Color(255, 227, 222));
+        jTextFieldPalabra.setFont(new java.awt.Font("Tw Cen MT", 1, 14)); // NOI18N
+
+        jLabelVocal.setFont(new java.awt.Font("Tw Cen MT", 1, 18)); // NOI18N
         jLabelVocal.setText("Comienza con vocal");
 
+        jLabelConsonante.setFont(new java.awt.Font("Tw Cen MT", 1, 18)); // NOI18N
         jLabelConsonante.setText("Comienza con consonante");
 
+        jListVocal.setBackground(new java.awt.Color(255, 227, 222));
+        jListVocal.setFont(new java.awt.Font("Tw Cen MT", 1, 14)); // NOI18N
         jScrollPane1.setViewportView(jListVocal);
 
+        jListConsonante.setBackground(new java.awt.Color(255, 227, 222));
+        jListConsonante.setFont(new java.awt.Font("Tw Cen MT", 1, 14)); // NOI18N
         jScrollPane2.setViewportView(jListConsonante);
+
+        javax.swing.GroupLayout jPanelLayout = new javax.swing.GroupLayout(jPanel);
+        jPanel.setLayout(jPanelLayout);
+        jPanelLayout.setHorizontalGroup(
+            jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelLayout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(jLabelTitulo)
+                .addGap(18, 18, 18)
+                .addComponent(jTextFieldPalabra)
+                .addGap(28, 28, 28)
+                .addComponent(jButtonIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32))
+            .addGroup(jPanelLayout.createSequentialGroup()
+                .addGap(52, 52, 52)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(54, 54, 54))
+            .addGroup(jPanelLayout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(jLabelVocal)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                .addComponent(jLabelConsonante)
+                .addGap(22, 22, 22))
+        );
+        jPanelLayout.setVerticalGroup(
+            jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelLayout.createSequentialGroup()
+                .addGap(56, 56, 56)
+                .addGroup(jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtonIngresar)
+                    .addComponent(jTextFieldPalabra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelTitulo))
+                .addGap(29, 29, 29)
+                .addGroup(jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelVocal)
+                    .addComponent(jLabelConsonante))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(29, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(jLabelTitulo)
-                .addGap(18, 18, 18)
-                .addComponent(jTextFieldPalabra)
-                .addGap(47, 47, 47)
-                .addComponent(jButtonIngresar)
-                .addGap(32, 32, 32))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(46, 46, 46)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabelVocal)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 91, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabelConsonante)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(12, 12, 12)))
-                .addGap(44, 44, 44))
+            .addComponent(jPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(48, 48, 48)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelTitulo)
-                    .addComponent(jButtonIngresar)
-                    .addComponent(jTextFieldPalabra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelVocal)
-                    .addComponent(jLabelConsonante))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(37, Short.MAX_VALUE))
+            .addComponent(jPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -112,17 +141,17 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         String palabra=jTextFieldPalabra.getText();
         jTextFieldPalabra.setText(""); //Vaciamos el campo de texto para que el usuario no tenga que borrar
         if (palabra.equals("") || comprobarNumero(palabra)){ //Casos no válidos, como cadena vacía o si la palabra solo tiene números
-            AlertaPalabra alerta=new AlertaPalabra(this,true);
+            AlertaPalabra alerta=new AlertaPalabra(this,true); //Creamos un diálogo para avisar del error
             alerta.setVisible(true);
         }
-        else{
-            if (comprobarVocal(palabra.charAt(0)+"")){
-                Listas.anadirPalabra(Listas.getVocales(), palabra);
-                refrescarLista(jListVocal, Listas.getVocales(), palabra);
+        else{ //Si no se da ningún caso de los que darían error
+            if (comprobarVocal(palabra.charAt(0)+"")){ //Si el primer carácter es una vocal
+                Listas.anadirPalabra(Listas.getVocales(), palabra); //Lo añadimos a la lista de vocales
+                refrescarLista(jListVocal, Listas.getVocales());
             }
-            else{
-                Listas.anadirPalabra(Listas.getConsonantes(), palabra);
-                refrescarLista(jListConsonante, Listas.getConsonantes(), palabra);
+            else{ //Si no empieza por vocal
+                Listas.anadirPalabra(Listas.getConsonantes(), palabra); //Lo añadimos a la lista de consonantes
+                refrescarLista(jListConsonante, Listas.getConsonantes());
             }
         }
     }//GEN-LAST:event_jButtonIngresarActionPerformed
@@ -169,12 +198,12 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     public static boolean comprobarNumero(String palabra){ //Este método comprueba si el parámetro que recibe es un numero
         return palabra.matches(".*\\d.*"); //Devuelve true si la palabara contiene números
     }
-    public void refrescarLista(JList listaGui, List<String> lista, String palabra){
+    public void refrescarLista(JList listaGui, List<String> lista){
         DefaultListModel<String> model = new DefaultListModel<>();
-        for(String s:lista){
-            model.addElement(s);
+        for(String s:lista){ //Para cada elemento de la lista
+            model.addElement(s); //Lo añadimos al modelo
         }
-        listaGui.setModel(model);
+        listaGui.setModel(model); //Establecemos el modelo de la JList recibida como el que hemos definido
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonIngresar;
@@ -183,6 +212,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelVocal;
     private javax.swing.JList<String> jListConsonante;
     private javax.swing.JList<String> jListVocal;
+    private javax.swing.JPanel jPanel;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField jTextFieldPalabra;

@@ -5,6 +5,7 @@
  */
 package actividad1;
 
+import java.awt.Color;
 import java.util.Random;
 
 /**
@@ -40,86 +41,97 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jLabelResultado = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
-        jLabelTitulo.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jPanel1.setBackground(new java.awt.Color(226, 255, 255));
+
+        jLabelTitulo.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabelTitulo.setText("Generador de números:");
 
+        jRadioButtonEntre0y100.setBackground(new java.awt.Color(226, 255, 255));
         buttonGroupRangos.add(jRadioButtonEntre0y100);
-        jRadioButtonEntre0y100.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jRadioButtonEntre0y100.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jRadioButtonEntre0y100.setText("Entre 0 y 100");
 
+        jRadioButtonEntre100y200.setBackground(new java.awt.Color(226, 255, 255));
         buttonGroupRangos.add(jRadioButtonEntre100y200);
-        jRadioButtonEntre100y200.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jRadioButtonEntre100y200.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jRadioButtonEntre100y200.setText("Entre 100 y 200");
 
+        jRadioButtonEntre200y500.setBackground(new java.awt.Color(226, 255, 255));
         buttonGroupRangos.add(jRadioButtonEntre200y500);
-        jRadioButtonEntre200y500.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jRadioButtonEntre200y500.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jRadioButtonEntre200y500.setText("Entre 200 y 500");
 
+        jButtonGenerarAleatorio.setBackground(new java.awt.Color(0, 51, 51));
+        jButtonGenerarAleatorio.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jButtonGenerarAleatorio.setForeground(new java.awt.Color(226, 255, 255));
         jButtonGenerarAleatorio.setText("Generar");
+        jButtonGenerarAleatorio.setBorderPainted(false);
+        jButtonGenerarAleatorio.setFocusPainted(false);
+        jButtonGenerarAleatorio.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        jButtonGenerarAleatorio.setRequestFocusEnabled(false);
         jButtonGenerarAleatorio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonGenerarAleatorioActionPerformed(evt);
             }
         });
 
+        jLabelResultado.setBackground(new java.awt.Color(0, 51, 51));
         jLabelResultado.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabelResultado.setForeground(new java.awt.Color(226, 255, 255));
         jLabelResultado.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelResultado.setText("000");
         jLabelResultado.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jLabelResultado.setOpaque(true);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(jLabelTitulo)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabelTitulo)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jRadioButtonEntre100y200)
-                            .addComponent(jRadioButtonEntre0y100)
-                            .addComponent(jRadioButtonEntre200y500)
-                            .addComponent(jButtonGenerarAleatorio, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(113, 113, 113)
-                        .addComponent(jLabelResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(18, Short.MAX_VALUE))
+                    .addComponent(jButtonGenerarAleatorio, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jRadioButtonEntre100y200, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jRadioButtonEntre0y100)
+                        .addComponent(jRadioButtonEntre200y500, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap(15, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabelResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(99, 99, 99))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(35, 35, 35)
+                .addGap(30, 30, 30)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelTitulo)
-                    .addComponent(jRadioButtonEntre0y100))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jRadioButtonEntre100y200)
-                .addGap(8, 8, 8)
-                .addComponent(jRadioButtonEntre200y500)
+                    .addComponent(jRadioButtonEntre0y100)
+                    .addComponent(jLabelTitulo))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jRadioButtonEntre100y200, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jRadioButtonEntre200y500, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
                 .addComponent(jButtonGenerarAleatorio)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(jLabelResultado)
-                .addGap(23, 23, 23))
+                .addContainerGap(33, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
