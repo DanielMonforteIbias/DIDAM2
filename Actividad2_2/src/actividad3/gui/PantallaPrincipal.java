@@ -7,6 +7,7 @@ package actividad3.gui;
 
 import actividad3.logica.ListaPalabras;
 import java.util.ArrayList;
+import javax.swing.JLabel;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -47,6 +48,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jButtonIngresar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTablePalabras = new javax.swing.JTable();
+        jLabelAviso = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -61,9 +63,6 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         jTablePalabras.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null},
-                {null},
-                {null},
                 {null}
             },
             new String [] {
@@ -71,6 +70,9 @@ public class PantallaPrincipal extends javax.swing.JFrame {
             }
         ));
         jScrollPane1.setViewportView(jTablePalabras);
+
+        jLabelAviso.setForeground(new java.awt.Color(255, 0, 0));
+        jLabelAviso.setText("No hay palabras ingresadas");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -84,11 +86,13 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                             .addComponent(jButtonIngresar)
                             .addComponent(jLabelTitulo))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextFieldPalabra))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 5, Short.MAX_VALUE)))
+                        .addComponent(jTextFieldPalabra, javax.swing.GroupLayout.DEFAULT_SIZE, 134, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabelAviso)
+                .addGap(52, 52, 52))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -99,9 +103,11 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                     .addComponent(jTextFieldPalabra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(29, 29, 29)
                 .addComponent(jButtonIngresar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabelAviso)
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
         pack();
@@ -109,7 +115,8 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
     private void jButtonIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonIngresarActionPerformed
         String palabra=jTextFieldPalabra.getText();
-        if (palabra.equals("")){
+        jTextFieldPalabra.setText("");
+        if (palabra.equals("") || comprobarNumero(palabra) || palabra.length()>10){
             AlertaPalabra alerta=new AlertaPalabra(this,true);
             alerta.setVisible(true);
         }
@@ -117,8 +124,18 @@ public class PantallaPrincipal extends javax.swing.JFrame {
             ListaPalabras.anadirPalabra(palabra);
             refrescarTabla();
         }
+        comprobarPalabras(jLabelAviso);
     }//GEN-LAST:event_jButtonIngresarActionPerformed
 
+    public static boolean comprobarNumero(String palabra){ //Este método comprueba si el parámetro que recibe es un numero
+        return palabra.matches(".*\\d.*"); //Devuelve true si la palabara contiene números
+    }
+    public static void comprobarPalabras(JLabel aviso){
+        if (ListaPalabras.getPalabras().size()==0){
+           aviso.setVisible(true);
+        }
+        else aviso.setVisible(false);
+    }
     /**
      * @param args the command line arguments
      */
@@ -156,6 +173,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonIngresar;
+    private javax.swing.JLabel jLabelAviso;
     private javax.swing.JLabel jLabelTitulo;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTablePalabras;

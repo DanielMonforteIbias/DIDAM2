@@ -6,7 +6,6 @@
 package actividad2.gui;
 
 import actividad2.logica.Listas;
-import java.util.ArrayList;
 import java.util.List;
 import javax.swing.DefaultListModel;
 import javax.swing.JList;
@@ -111,6 +110,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
     private void jButtonIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonIngresarActionPerformed
         String palabra=jTextFieldPalabra.getText();
+        jTextFieldPalabra.setText(""); //Vaciamos el campo de texto para que el usuario no tenga que borrar
         if (palabra.equals("") || comprobarNumero(palabra)){ //Casos no válidos, como cadena vacía o si la palabra solo tiene números
             AlertaPalabra alerta=new AlertaPalabra(this,true);
             alerta.setVisible(true);
@@ -166,8 +166,8 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         return vocal.matches("[AEIOUaeiou]"); //Devuelve true si el caráter es alguno de los siguientes: A E I O U a e i o u, y false si no
     }
     
-    public static boolean comprobarNumero(String numero){ //Este método comprueba si el parámetro que recibe es un numero
-        return numero.matches("[0-9]+"); //Devuelve true si la palabara contiene solo números. Si tiene alguna letra, aunque contenga números, devuelve false
+    public static boolean comprobarNumero(String palabra){ //Este método comprueba si el parámetro que recibe es un numero
+        return palabra.matches(".*\\d.*"); //Devuelve true si la palabara contiene números
     }
     public void refrescarLista(JList listaGui, List<String> lista, String palabra){
         DefaultListModel<String> model = new DefaultListModel<>();

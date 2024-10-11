@@ -126,27 +126,27 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonGenerarAleatorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGenerarAleatorioActionPerformed
-        int rango[]=new int[2];
-        if(jRadioButtonEntre0y100.isSelected()){
-            rango[0]=0;
-            rango[1]=100;
+        int rango[]=new int[2]; //Array que guardará los valores mínimo y máximo del rango
+        if(jRadioButtonEntre0y100.isSelected()){ //Si está seleccionado el primer RadioButton
+            rango[0]=0; //El mínimo es 0
+            rango[1]=100; //El máximo es 100
         }
-        else if (jRadioButtonEntre100y200.isSelected()){
-            rango[0]=100;
-            rango[1]=200;
+        else if (jRadioButtonEntre100y200.isSelected()){ //Si está seleccionado el segundo
+            rango[0]=100; //El mínimo es 100
+            rango[1]=200; //El máximo es 200
         }
-        else if (jRadioButtonEntre200y500.isSelected()){
-            rango[0]=200;
-            rango[1]=500;
+        else if (jRadioButtonEntre200y500.isSelected()){ //Si está seleccionado el tercero
+            rango[0]=200; //El mínimo es 200
+            rango[1]=500; //El máximo es 500
         }
-        int random=generarNumeroAleatorio(rango[0],rango[1]);
-        jLabelResultado.setText(random+""); //Concatenamos con comillas para que lo tome como String y no como int
+        int random=generarNumeroAleatorio(rango[0],rango[1]); //Generamos el número aleatorio
+        jLabelResultado.setText(random+""); //Establecemos el texto. Concatenamos con comillas para que tome el número como String y no como int
     }//GEN-LAST:event_jButtonGenerarAleatorioActionPerformed
 
     private int generarNumeroAleatorio(int min, int max){
-        Random random = new Random();
-        int number = random.nextInt((max-min) + 1) + min;
-        return number;
+        Random random = new Random(); //Creamos un objeto de la clase random
+        int number = random.nextInt((max-min) + 1) + min; //Generamos el número aleatorio
+        return number; //Lo devolvemos
     }
     /**
      * @param args the command line arguments

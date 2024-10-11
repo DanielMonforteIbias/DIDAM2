@@ -61,54 +61,91 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jLabelResultado4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(750, 450));
+        setSize(new java.awt.Dimension(750, 450));
+        getContentPane().setLayout(null);
 
         jLabelTitulo.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabelTitulo.setForeground(new java.awt.Color(51, 51, 51));
         jLabelTitulo.setText("Ingrese las respuestas correctas");
+        getContentPane().add(jLabelTitulo);
+        jLabelTitulo.setBounds(190, 30, 370, 29);
 
         jLabelPregunta1.setText("4*6+3+2*2");
+        getContentPane().add(jLabelPregunta1);
+        jLabelPregunta1.setBounds(30, 120, 67, 16);
 
         jLabelPregunta2.setText("Nombre del quinto planeta");
+        getContentPane().add(jLabelPregunta2);
+        jLabelPregunta2.setBounds(30, 170, 151, 16);
 
         jLabelPregunta3.setText("Palabra con error ortográfico");
+        getContentPane().add(jLabelPregunta3);
+        jLabelPregunta3.setBounds(30, 220, 166, 16);
 
         jLabelPregunta4.setText("Sinónimos de inteligente");
+        getContentPane().add(jLabelPregunta4);
+        jLabelPregunta4.setBounds(30, 270, 140, 16);
 
         buttonGroupPregunta1.add(jRadioButtonPregunta1A);
         jRadioButtonPregunta1A.setText("58");
+        getContentPane().add(jRadioButtonPregunta1A);
+        jRadioButtonPregunta1A.setBounds(230, 120, 43, 25);
 
         buttonGroupPregunta1.add(jRadioButtonPregunta1B);
         jRadioButtonPregunta1B.setText("34");
+        getContentPane().add(jRadioButtonPregunta1B);
+        jRadioButtonPregunta1B.setBounds(330, 120, 43, 25);
 
         buttonGroupPregunta1.add(jRadioButtonPregunta1C);
         jRadioButtonPregunta1C.setText("31");
+        getContentPane().add(jRadioButtonPregunta1C);
+        jRadioButtonPregunta1C.setBounds(430, 120, 43, 25);
 
         buttonGroupPregunta1.add(jRadioButtonPreguntaD);
         jRadioButtonPreguntaD.setText("40");
+        getContentPane().add(jRadioButtonPreguntaD);
+        jRadioButtonPreguntaD.setBounds(530, 120, 43, 25);
 
         buttonGroupPregunta2.add(jRadioButtonPregunta2A);
         jRadioButtonPregunta2A.setText("Marte");
+        getContentPane().add(jRadioButtonPregunta2A);
+        jRadioButtonPregunta2A.setBounds(230, 170, 61, 25);
 
         buttonGroupPregunta2.add(jRadioButtonPregunta2B);
         jRadioButtonPregunta2B.setText("Júpiter");
+        getContentPane().add(jRadioButtonPregunta2B);
+        jRadioButtonPregunta2B.setBounds(330, 170, 67, 25);
 
         buttonGroupPregunta2.add(jRadioButtonPregunta2C);
         jRadioButtonPregunta2C.setText("Tierra");
+        getContentPane().add(jRadioButtonPregunta2C);
+        jRadioButtonPregunta2C.setBounds(430, 170, 63, 25);
 
         buttonGroupPregunta2.add(jRadioButtonPregunta2D);
         jRadioButtonPregunta2D.setText("Saturno");
+        getContentPane().add(jRadioButtonPregunta2D);
+        jRadioButtonPregunta2D.setBounds(530, 170, 73, 25);
 
         buttonGroupPregunta3.add(jRadioButtonPregunta3A);
         jRadioButtonPregunta3A.setText("Ola");
+        getContentPane().add(jRadioButtonPregunta3A);
+        jRadioButtonPregunta3A.setBounds(230, 220, 47, 25);
 
         buttonGroupPregunta3.add(jRadioButtonPregunta3B);
         jRadioButtonPregunta3B.setText("Desición");
+        getContentPane().add(jRadioButtonPregunta3B);
+        jRadioButtonPregunta3B.setBounds(330, 220, 75, 25);
 
         buttonGroupPregunta3.add(jRadioButtonPregunta3C);
         jRadioButtonPregunta3C.setText("Hay");
+        getContentPane().add(jRadioButtonPregunta3C);
+        jRadioButtonPregunta3C.setBounds(430, 220, 49, 25);
 
         buttonGroupPregunta3.add(jRadioButtonPregunta3D);
         jRadioButtonPregunta3D.setText("Ahí");
+        getContentPane().add(jRadioButtonPregunta3D);
+        jRadioButtonPregunta3D.setBounds(530, 220, 47, 25);
 
         jButtonCorregir.setText("Corregir");
         jButtonCorregir.addActionListener(new java.awt.event.ActionListener() {
@@ -116,130 +153,38 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 jButtonCorregirActionPerformed(evt);
             }
         });
+        getContentPane().add(jButtonCorregir);
+        jButtonCorregir.setBounds(190, 320, 400, 25);
 
         jCheckBoxPregunta4A.setText("Sagaz");
+        getContentPane().add(jCheckBoxPregunta4A);
+        jCheckBoxPregunta4A.setBounds(230, 270, 63, 25);
 
         jCheckBoxPregunta4B.setText("Listo");
+        getContentPane().add(jCheckBoxPregunta4B);
+        jCheckBoxPregunta4B.setBounds(330, 270, 55, 25);
 
         jCheckBoxPregunta4C.setText("Lerdo");
+        getContentPane().add(jCheckBoxPregunta4C);
+        jCheckBoxPregunta4C.setBounds(430, 270, 61, 25);
 
         jCheckBoxPregunta4D.setText("Astuto");
+        getContentPane().add(jCheckBoxPregunta4D);
+        jCheckBoxPregunta4D.setBounds(530, 270, 65, 25);
 
         jLabelAciertos.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        getContentPane().add(jLabelAciertos);
+        jLabelAciertos.setBounds(350, 360, 100, 30);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(150, 150, 150)
-                .addComponent(jLabelTitulo))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addComponent(jLabelPregunta1)
-                .addGap(111, 111, 111)
-                .addComponent(jRadioButtonPregunta1A)
-                .addGap(56, 56, 56)
-                .addComponent(jRadioButtonPregunta1B)
-                .addGap(51, 51, 51)
-                .addComponent(jRadioButtonPregunta1C)
-                .addGap(48, 48, 48)
-                .addComponent(jRadioButtonPreguntaD))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addComponent(jLabelPregunta2)
-                .addGap(43, 43, 43)
-                .addComponent(jRadioButtonPregunta2A)
-                .addGap(37, 37, 37)
-                .addComponent(jRadioButtonPregunta2B)
-                .addGap(32, 32, 32)
-                .addComponent(jRadioButtonPregunta2C)
-                .addGap(32, 32, 32)
-                .addComponent(jRadioButtonPregunta2D))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addComponent(jLabelPregunta3)
-                .addGap(30, 30, 30)
-                .addComponent(jRadioButtonPregunta3A)
-                .addGap(52, 52, 52)
-                .addComponent(jRadioButtonPregunta3B)
-                .addGap(23, 23, 23)
-                .addComponent(jRadioButtonPregunta3C)
-                .addGap(40, 40, 40)
-                .addComponent(jRadioButtonPregunta3D))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addComponent(jLabelPregunta4)
-                .addGap(54, 54, 54)
-                .addComponent(jCheckBoxPregunta4A)
-                .addGap(40, 40, 40)
-                .addComponent(jCheckBoxPregunta4B)
-                .addGap(18, 18, 18)
-                .addComponent(jCheckBoxPregunta4C)
-                .addGap(53, 53, 53)
-                .addComponent(jCheckBoxPregunta4D))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(175, 175, 175)
-                .addComponent(jButtonCorregir, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(jLabelTitulo)
-                .addGap(60, 60, 60)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(4, 4, 4)
-                        .addComponent(jLabelPregunta1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(1, 1, 1)
-                        .addComponent(jRadioButtonPregunta1A))
-                    .addComponent(jRadioButtonPregunta1B)
-                    .addComponent(jRadioButtonPregunta1C)
-                    .addComponent(jRadioButtonPreguntaD))
-                .addGap(17, 17, 17)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(8, 8, 8)
-                        .addComponent(jLabelPregunta2))
-                    .addComponent(jRadioButtonPregunta2A)
-                    .addComponent(jRadioButtonPregunta2B)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(4, 4, 4)
-                        .addComponent(jRadioButtonPregunta2C))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(4, 4, 4)
-                        .addComponent(jRadioButtonPregunta2D)))
-                .addGap(23, 23, 23)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(5, 5, 5)
-                        .addComponent(jLabelPregunta3))
-                    .addComponent(jRadioButtonPregunta3A)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(1, 1, 1)
-                        .addComponent(jRadioButtonPregunta3B))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(1, 1, 1)
-                        .addComponent(jRadioButtonPregunta3C))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(1, 1, 1)
-                        .addComponent(jRadioButtonPregunta3D)))
-                .addGap(24, 24, 24)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(4, 4, 4)
-                        .addComponent(jLabelPregunta4))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(2, 2, 2)
-                        .addComponent(jCheckBoxPregunta4A))
-                    .addComponent(jCheckBoxPregunta4B)
-                    .addComponent(jCheckBoxPregunta4C)
-                    .addComponent(jCheckBoxPregunta4D))
-                .addGap(33, 33, 33)
-                .addComponent(jButtonCorregir))
-        );
+        jLabelResultado1.setToolTipText("");
+        getContentPane().add(jLabelResultado1);
+        jLabelResultado1.setBounds(630, 120, 80, 20);
+        getContentPane().add(jLabelResultado2);
+        jLabelResultado2.setBounds(630, 170, 80, 20);
+        getContentPane().add(jLabelResultado3);
+        jLabelResultado3.setBounds(630, 220, 80, 20);
+        getContentPane().add(jLabelResultado4);
+        jLabelResultado4.setBounds(630, 270, 80, 20);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
