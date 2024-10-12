@@ -5,11 +5,9 @@
  */
 package actividad3.gui;
 
-import actividad2.gui.*;
-
 /**
  *
- * @author Tarde
+ * @author Daniel Monforte Ibias
  */
 public class AlertaPalabra extends javax.swing.JDialog {
 

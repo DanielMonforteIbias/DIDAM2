@@ -7,7 +7,7 @@ package actividad2.gui;
 
 /**
  *
- * @author Tarde
+ * @author Daniel Monforte Ibias
  */
 public class AlertaPalabra extends javax.swing.JDialog {
 

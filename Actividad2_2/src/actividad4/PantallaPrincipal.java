@@ -9,7 +9,7 @@ import java.awt.Color;
 
 /**
  *
- * @author Tarde
+ * @author Daniel Monforte Ibias
  */
 public class PantallaPrincipal extends javax.swing.JFrame {
 
@@ -63,6 +63,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(750, 450));
+        setResizable(false);
         setSize(new java.awt.Dimension(750, 450));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 228));
@@ -72,172 +73,176 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jLabelTitulo.setForeground(new java.awt.Color(51, 51, 51));
         jLabelTitulo.setText("Ingrese las respuestas correctas");
         jPanel1.add(jLabelTitulo);
-        jLabelTitulo.setBounds(190, 30, 390, 30);
+        jLabelTitulo.setBounds(190, 30, 390, 29);
 
-        jLabelPregunta1.setFont(new java.awt.Font("Bahnschrift", 1, 12)); // NOI18N
+        jLabelPregunta1.setFont(new java.awt.Font("Bahnschrift", 3, 14)); // NOI18N
         jLabelPregunta1.setText("4*6+3+2*2");
         jPanel1.add(jLabelPregunta1);
-        jLabelPregunta1.setBounds(30, 120, 80, 15);
+        jLabelPregunta1.setBounds(20, 120, 80, 17);
 
-        jLabelPregunta2.setFont(new java.awt.Font("Bahnschrift", 1, 12)); // NOI18N
+        jLabelPregunta2.setFont(new java.awt.Font("Bahnschrift", 3, 14)); // NOI18N
         jLabelPregunta2.setText("Nombre del quinto planeta");
         jPanel1.add(jLabelPregunta2);
-        jLabelPregunta2.setBounds(30, 170, 165, 15);
+        jLabelPregunta2.setBounds(20, 170, 200, 17);
 
-        jLabelPregunta3.setFont(new java.awt.Font("Bahnschrift", 1, 12)); // NOI18N
+        jLabelPregunta3.setFont(new java.awt.Font("Bahnschrift", 3, 14)); // NOI18N
         jLabelPregunta3.setText("Palabra con error ortográfico");
         jPanel1.add(jLabelPregunta3);
-        jLabelPregunta3.setBounds(30, 220, 186, 15);
+        jLabelPregunta3.setBounds(20, 220, 217, 17);
 
-        jLabelPregunta4.setFont(new java.awt.Font("Bahnschrift", 1, 12)); // NOI18N
+        jLabelPregunta4.setFont(new java.awt.Font("Bahnschrift", 3, 14)); // NOI18N
         jLabelPregunta4.setText("Sinónimos de inteligente");
         jPanel1.add(jLabelPregunta4);
-        jLabelPregunta4.setBounds(30, 270, 154, 15);
+        jLabelPregunta4.setBounds(20, 270, 186, 17);
 
         jRadioButtonPregunta1A.setBackground(new java.awt.Color(255, 255, 228));
         buttonGroupPregunta1.add(jRadioButtonPregunta1A);
-        jRadioButtonPregunta1A.setFont(new java.awt.Font("Bahnschrift", 1, 12)); // NOI18N
+        jRadioButtonPregunta1A.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
         jRadioButtonPregunta1A.setText("58");
         jPanel1.add(jRadioButtonPregunta1A);
-        jRadioButtonPregunta1A.setBounds(230, 120, 60, 23);
+        jRadioButtonPregunta1A.setBounds(260, 120, 60, 25);
 
         jRadioButtonPregunta1B.setBackground(new java.awt.Color(255, 255, 228));
         buttonGroupPregunta1.add(jRadioButtonPregunta1B);
-        jRadioButtonPregunta1B.setFont(new java.awt.Font("Bahnschrift", 1, 12)); // NOI18N
+        jRadioButtonPregunta1B.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
         jRadioButtonPregunta1B.setText("34");
         jPanel1.add(jRadioButtonPregunta1B);
-        jRadioButtonPregunta1B.setBounds(330, 120, 60, 23);
+        jRadioButtonPregunta1B.setBounds(360, 120, 60, 25);
 
         jRadioButtonPregunta1C.setBackground(new java.awt.Color(255, 255, 228));
         buttonGroupPregunta1.add(jRadioButtonPregunta1C);
-        jRadioButtonPregunta1C.setFont(new java.awt.Font("Bahnschrift", 1, 12)); // NOI18N
+        jRadioButtonPregunta1C.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
         jRadioButtonPregunta1C.setText("31");
         jPanel1.add(jRadioButtonPregunta1C);
-        jRadioButtonPregunta1C.setBounds(430, 120, 60, 23);
+        jRadioButtonPregunta1C.setBounds(460, 120, 60, 25);
 
         jRadioButtonPreguntaD.setBackground(new java.awt.Color(255, 255, 228));
         buttonGroupPregunta1.add(jRadioButtonPreguntaD);
-        jRadioButtonPreguntaD.setFont(new java.awt.Font("Bahnschrift", 1, 12)); // NOI18N
+        jRadioButtonPreguntaD.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
         jRadioButtonPreguntaD.setText("40");
         jPanel1.add(jRadioButtonPreguntaD);
-        jRadioButtonPreguntaD.setBounds(530, 120, 60, 23);
+        jRadioButtonPreguntaD.setBounds(560, 120, 60, 25);
 
         jRadioButtonPregunta2A.setBackground(new java.awt.Color(255, 255, 228));
         buttonGroupPregunta2.add(jRadioButtonPregunta2A);
-        jRadioButtonPregunta2A.setFont(new java.awt.Font("Bahnschrift", 1, 12)); // NOI18N
+        jRadioButtonPregunta2A.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
         jRadioButtonPregunta2A.setText("Marte");
         jPanel1.add(jRadioButtonPregunta2A);
-        jRadioButtonPregunta2A.setBounds(230, 170, 70, 23);
+        jRadioButtonPregunta2A.setBounds(260, 170, 70, 25);
 
         jRadioButtonPregunta2B.setBackground(new java.awt.Color(255, 255, 228));
         buttonGroupPregunta2.add(jRadioButtonPregunta2B);
-        jRadioButtonPregunta2B.setFont(new java.awt.Font("Bahnschrift", 1, 12)); // NOI18N
+        jRadioButtonPregunta2B.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
         jRadioButtonPregunta2B.setText("Júpiter");
         jPanel1.add(jRadioButtonPregunta2B);
-        jRadioButtonPregunta2B.setBounds(330, 170, 80, 23);
+        jRadioButtonPregunta2B.setBounds(360, 170, 80, 25);
 
         jRadioButtonPregunta2C.setBackground(new java.awt.Color(255, 255, 228));
         buttonGroupPregunta2.add(jRadioButtonPregunta2C);
-        jRadioButtonPregunta2C.setFont(new java.awt.Font("Bahnschrift", 1, 12)); // NOI18N
+        jRadioButtonPregunta2C.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
         jRadioButtonPregunta2C.setText("Tierra");
         jPanel1.add(jRadioButtonPregunta2C);
-        jRadioButtonPregunta2C.setBounds(430, 170, 70, 23);
+        jRadioButtonPregunta2C.setBounds(460, 170, 70, 25);
 
         jRadioButtonPregunta2D.setBackground(new java.awt.Color(255, 255, 228));
         buttonGroupPregunta2.add(jRadioButtonPregunta2D);
-        jRadioButtonPregunta2D.setFont(new java.awt.Font("Bahnschrift", 1, 12)); // NOI18N
+        jRadioButtonPregunta2D.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
         jRadioButtonPregunta2D.setText("Saturno");
         jPanel1.add(jRadioButtonPregunta2D);
-        jRadioButtonPregunta2D.setBounds(530, 170, 80, 23);
+        jRadioButtonPregunta2D.setBounds(560, 170, 83, 25);
 
         jRadioButtonPregunta3A.setBackground(new java.awt.Color(255, 255, 228));
         buttonGroupPregunta3.add(jRadioButtonPregunta3A);
-        jRadioButtonPregunta3A.setFont(new java.awt.Font("Bahnschrift", 1, 12)); // NOI18N
+        jRadioButtonPregunta3A.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
         jRadioButtonPregunta3A.setText("Ola");
         jPanel1.add(jRadioButtonPregunta3A);
-        jRadioButtonPregunta3A.setBounds(230, 220, 60, 23);
+        jRadioButtonPregunta3A.setBounds(260, 220, 60, 25);
 
         jRadioButtonPregunta3B.setBackground(new java.awt.Color(255, 255, 228));
         buttonGroupPregunta3.add(jRadioButtonPregunta3B);
-        jRadioButtonPregunta3B.setFont(new java.awt.Font("Bahnschrift", 1, 12)); // NOI18N
+        jRadioButtonPregunta3B.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
         jRadioButtonPregunta3B.setText("Desición");
         jPanel1.add(jRadioButtonPregunta3B);
-        jRadioButtonPregunta3B.setBounds(330, 220, 90, 23);
+        jRadioButtonPregunta3B.setBounds(360, 220, 90, 25);
 
         jRadioButtonPregunta3C.setBackground(new java.awt.Color(255, 255, 228));
         buttonGroupPregunta3.add(jRadioButtonPregunta3C);
-        jRadioButtonPregunta3C.setFont(new java.awt.Font("Bahnschrift", 1, 12)); // NOI18N
+        jRadioButtonPregunta3C.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
         jRadioButtonPregunta3C.setText("Hay");
         jPanel1.add(jRadioButtonPregunta3C);
-        jRadioButtonPregunta3C.setBounds(430, 220, 70, 23);
+        jRadioButtonPregunta3C.setBounds(460, 220, 70, 25);
 
         jRadioButtonPregunta3D.setBackground(new java.awt.Color(255, 255, 228));
         buttonGroupPregunta3.add(jRadioButtonPregunta3D);
-        jRadioButtonPregunta3D.setFont(new java.awt.Font("Bahnschrift", 1, 12)); // NOI18N
+        jRadioButtonPregunta3D.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
         jRadioButtonPregunta3D.setText("Ahí");
         jPanel1.add(jRadioButtonPregunta3D);
-        jRadioButtonPregunta3D.setBounds(530, 220, 60, 23);
+        jRadioButtonPregunta3D.setBounds(560, 220, 60, 25);
 
-        jButtonCorregir.setFont(new java.awt.Font("Bahnschrift", 1, 12)); // NOI18N
+        jButtonCorregir.setBackground(new java.awt.Color(210, 255, 210));
+        jButtonCorregir.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
         jButtonCorregir.setText("Corregir");
+        jButtonCorregir.setFocusPainted(false);
         jButtonCorregir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonCorregirActionPerformed(evt);
             }
         });
         jPanel1.add(jButtonCorregir);
-        jButtonCorregir.setBounds(190, 320, 400, 23);
+        jButtonCorregir.setBounds(190, 320, 400, 30);
 
         jCheckBoxPregunta4A.setBackground(new java.awt.Color(255, 255, 228));
-        jCheckBoxPregunta4A.setFont(new java.awt.Font("Bahnschrift", 1, 12)); // NOI18N
+        jCheckBoxPregunta4A.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
         jCheckBoxPregunta4A.setText("Sagaz");
         jPanel1.add(jCheckBoxPregunta4A);
-        jCheckBoxPregunta4A.setBounds(230, 270, 80, 23);
+        jCheckBoxPregunta4A.setBounds(260, 270, 80, 25);
 
         jCheckBoxPregunta4B.setBackground(new java.awt.Color(255, 255, 228));
-        jCheckBoxPregunta4B.setFont(new java.awt.Font("Bahnschrift", 1, 12)); // NOI18N
+        jCheckBoxPregunta4B.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
         jCheckBoxPregunta4B.setText("Listo");
         jPanel1.add(jCheckBoxPregunta4B);
-        jCheckBoxPregunta4B.setBounds(330, 270, 70, 23);
+        jCheckBoxPregunta4B.setBounds(360, 270, 70, 25);
 
         jCheckBoxPregunta4C.setBackground(new java.awt.Color(255, 255, 228));
-        jCheckBoxPregunta4C.setFont(new java.awt.Font("Bahnschrift", 1, 12)); // NOI18N
+        jCheckBoxPregunta4C.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
         jCheckBoxPregunta4C.setText("Lerdo");
         jPanel1.add(jCheckBoxPregunta4C);
-        jCheckBoxPregunta4C.setBounds(430, 270, 70, 23);
+        jCheckBoxPregunta4C.setBounds(460, 270, 70, 25);
 
         jCheckBoxPregunta4D.setBackground(new java.awt.Color(255, 255, 228));
-        jCheckBoxPregunta4D.setFont(new java.awt.Font("Bahnschrift", 1, 12)); // NOI18N
+        jCheckBoxPregunta4D.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
         jCheckBoxPregunta4D.setText("Astuto");
         jPanel1.add(jCheckBoxPregunta4D);
-        jCheckBoxPregunta4D.setBounds(530, 270, 80, 23);
+        jCheckBoxPregunta4D.setBounds(560, 270, 80, 25);
 
-        jLabelAciertos.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
+        jLabelAciertos.setFont(new java.awt.Font("Bahnschrift", 1, 18)); // NOI18N
         jPanel1.add(jLabelAciertos);
-        jLabelAciertos.setBounds(350, 360, 100, 30);
+        jLabelAciertos.setBounds(340, 360, 120, 30);
 
-        jLabelResultado1.setFont(new java.awt.Font("Bahnschrift", 0, 12)); // NOI18N
+        jLabelResultado1.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
         jLabelResultado1.setToolTipText("");
         jPanel1.add(jLabelResultado1);
-        jLabelResultado1.setBounds(630, 120, 80, 20);
+        jLabelResultado1.setBounds(660, 120, 80, 20);
 
-        jLabelResultado2.setFont(new java.awt.Font("Bahnschrift", 0, 12)); // NOI18N
+        jLabelResultado2.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
         jPanel1.add(jLabelResultado2);
-        jLabelResultado2.setBounds(630, 170, 80, 20);
+        jLabelResultado2.setBounds(660, 170, 80, 20);
 
-        jLabelResultado3.setFont(new java.awt.Font("Bahnschrift", 0, 12)); // NOI18N
+        jLabelResultado3.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
         jPanel1.add(jLabelResultado3);
-        jLabelResultado3.setBounds(630, 220, 80, 20);
+        jLabelResultado3.setBounds(660, 220, 80, 20);
 
-        jLabelResultado4.setFont(new java.awt.Font("Bahnschrift", 0, 12)); // NOI18N
+        jLabelResultado4.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
         jPanel1.add(jLabelResultado4);
-        jLabelResultado4.setBounds(630, 270, 80, 20);
+        jLabelResultado4.setBounds(660, 270, 80, 20);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 750, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 774, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -248,44 +253,44 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonCorregirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCorregirActionPerformed
-        int aciertos=0;
-        if (jRadioButtonPregunta1C.isSelected()){
-            aciertos++;
-            jLabelResultado1.setText("Correcto");
-            jLabelResultado1.setForeground(Color.green);
+        int aciertos=0; //Número de aciertos del usuario
+        if (jRadioButtonPregunta1C.isSelected()){ //La correcta es la C. Si el usuario la ha elegido
+            aciertos++; //Incrementamos los aciertos
+            jLabelResultado1.setText("Correcto"); //Su resultado es correcto
+            jLabelResultado1.setForeground(Color.green); //El resultado se mostrará en verde
+        }
+        else{ //Si la respuesta del usuario no es correcta
+            jLabelResultado1.setText("Incorrecto"); //Su resultado es incorrecto
+            jLabelResultado1.setForeground(Color.red); //El resultado se mostrará en rojo
+        }
+        if (jRadioButtonPregunta2B.isSelected()){ //La correcta es la B. Si el usuario la ha elegido
+            aciertos++; //Incrementamos los aciertos
+            jLabelResultado2.setText("Correcto"); //Su resultado es correcto
+            jLabelResultado2.setForeground(Color.green); //El resultado se mostrará en verde
         }
         else{
-            jLabelResultado1.setText("Incorrecto");
-            jLabelResultado1.setForeground(Color.red);
+            jLabelResultado2.setText("Incorrecto"); //Su resultado es incorrecto
+            jLabelResultado2.setForeground(Color.red); //El resultado se mostrará en rojo
         }
-        if (jRadioButtonPregunta2B.isSelected()){
-            aciertos++;
-            jLabelResultado2.setText("Correcto");
-            jLabelResultado2.setForeground(Color.green);
-        }
-        else{
-            jLabelResultado2.setText("Incorrecto");
-            jLabelResultado2.setForeground(Color.red);
-        }
-        if (jRadioButtonPregunta3B.isSelected()){
-            aciertos++;
-            jLabelResultado3.setText("Correcto");
-            jLabelResultado3.setForeground(Color.green);
+        if (jRadioButtonPregunta3B.isSelected()){ //La correcta es la B. Si el usuario la ha elegido
+            aciertos++; //Incrementamos los aciertos
+            jLabelResultado3.setText("Correcto"); //Su resultado es correcto
+            jLabelResultado3.setForeground(Color.green); //El resultado se mostrará en verde
         }
         else{
-            jLabelResultado3.setText("Incorrecto");
-            jLabelResultado3.setForeground(Color.red);
+            jLabelResultado3.setText("Incorrecto"); //Su resultado es incorrecto
+            jLabelResultado3.setForeground(Color.red); //El resultado se mostrará en rojo
         }
-        if (jCheckBoxPregunta4A.isSelected() && jCheckBoxPregunta4B.isSelected() && jCheckBoxPregunta4D.isSelected() && !jCheckBoxPregunta4C.isSelected()){
-            aciertos++;
-            jLabelResultado4.setText("Correcto");
-            jLabelResultado4.setForeground(Color.green);
+        if (jCheckBoxPregunta4A.isSelected() && jCheckBoxPregunta4B.isSelected() && jCheckBoxPregunta4D.isSelected() && !jCheckBoxPregunta4C.isSelected()){ //Las correctas son A, B y D. Si el usuario las ha elegido
+            aciertos++; //Incrementamos los aciertos
+            jLabelResultado4.setText("Correcto"); //Su resultado es correcto
+            jLabelResultado4.setForeground(Color.green); //El resultado se mostrará en verde
         }
-        else{
-            jLabelResultado4.setText("Incorrecto");
-            jLabelResultado4.setForeground(Color.red);
+        else{ //Si no ha marcado las 3 correctas
+            jLabelResultado4.setText("Incorrecto"); //Su resultado es incorrecto
+            jLabelResultado4.setForeground(Color.red); //El resultado se mostrará en rojo
         }
-        jLabelAciertos.setText("Aciertos: "+aciertos+"/4");
+        jLabelAciertos.setText("Aciertos: "+aciertos+"/4"); //Mostramos los aciertos del usuario
     }//GEN-LAST:event_jButtonCorregirActionPerformed
 
     /**

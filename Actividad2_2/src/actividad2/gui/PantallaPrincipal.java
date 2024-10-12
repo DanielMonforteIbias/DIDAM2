@@ -12,7 +12,7 @@ import javax.swing.JList;
 
 /**
  *
- * @author Tarde
+ * @author Daniel Monforte Ibias
  */
 public class PantallaPrincipal extends javax.swing.JFrame {
 
@@ -140,7 +140,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private void jButtonIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonIngresarActionPerformed
         String palabra=jTextFieldPalabra.getText();
         jTextFieldPalabra.setText(""); //Vaciamos el campo de texto para que el usuario no tenga que borrar
-        if (palabra.equals("") || comprobarNumero(palabra)){ //Casos no válidos, como cadena vacía o si la palabra solo tiene números
+        if (!comprobarValida(palabra)){ //Casos no válidos, como cadena vacía o si la palabra tiene números o símbolos
             AlertaPalabra alerta=new AlertaPalabra(this,true); //Creamos un diálogo para avisar del error
             alerta.setVisible(true);
         }
@@ -194,12 +194,12 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     public static boolean comprobarVocal(String vocal){ //Este método comprueba si el parámetro que recibe es una vocal
         return vocal.matches("[AEIOUaeiou]"); //Devuelve true si el caráter es alguno de los siguientes: A E I O U a e i o u, y false si no
     }
-    
-    public static boolean comprobarNumero(String palabra){ //Este método comprueba si el parámetro que recibe es un numero
-        return palabra.matches(".*\\d.*"); //Devuelve true si la palabara contiene números
+    public static boolean comprobarValida(String palabra){ //Este método comprueba si el parámetro que recibe es una palabra válida
+        return palabra.matches("[a-zA-Z]+"); //Devuelve true si la palabara no contiene caracteres que no sean letras
     }
+    
     public void refrescarLista(JList listaGui, List<String> lista){
-        DefaultListModel<String> model = new DefaultListModel<>();
+        DefaultListModel<String> model = new DefaultListModel<String>();
         for(String s:lista){ //Para cada elemento de la lista
             model.addElement(s); //Lo añadimos al modelo
         }
