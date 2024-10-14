@@ -6,13 +6,18 @@
 package actividad3.gui;
 
 import actividad3.logica.ListaPalabras;
+import java.awt.Color;
 import java.util.ArrayList;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.UIManager;
+import javax.swing.plaf.ColorUIResource;
+import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author Tarde
+ * @author Daniel Monforte Ibias
  */
 public class PantallaPrincipal extends javax.swing.JFrame {
 
@@ -21,18 +26,39 @@ public class PantallaPrincipal extends javax.swing.JFrame {
      */
     public PantallaPrincipal() {
         initComponents();
+        refrescarTabla(); //Refrescamos la tabla en un principio para darle la apariencia correcta
+        establecerColoresJOptionPane(); //Damos formato a los JOptionPane que se vayan a mostrar
     }
 
     private void refrescarTabla(){
-        DefaultTableModel dtm=new DefaultTableModel();
-        dtm.setColumnIdentifiers(new String[]{"Palabras"});
-        ArrayList<String>listaPalabras=ListaPalabras.getPalabras();
-        for(String palabra:listaPalabras){
-            String[]fila=new String[1];
-            fila[0]=palabra;
-            dtm.addRow(fila);
+        DefaultTableModel dtm=new DefaultTableModel(){
+        @Override
+        public boolean isCellEditable(int row, int column) {
+            return false; //Hacemos que las celdas no sean editables al hacer doble clic sobre ellas
         }
-        jTablePalabras.setModel(dtm);
+        };
+        dtm.setColumnIdentifiers(new String[]{"Palabras"}); //Ponemos nombre a la columna
+        ArrayList<String>listaPalabras=ListaPalabras.getPalabras(); //Obtenemos el ArrayList de palabras
+        for(String palabra:listaPalabras){ //Para cada palabra del ArrayList
+            String[]fila=new String[1]; //Creamos un Array de Strings de longitud 1
+            fila[0]=palabra; //El valor del array es la palabra
+            dtm.addRow(fila); //Añadimos el array a la tabla
+        }
+        jTablePalabras.setModel(dtm); //Establecemos el modelo creado como el de la tabla
+        
+        jScrollPaneTable.getViewport().setBackground(new Color(0xCCCCFF)); //Establecemos el color de fondo del jScrollPane que contiene la tabla
+        
+        //Apartado visual de la tabla
+        DefaultTableCellRenderer headerRenderer = new DefaultTableCellRenderer();
+        headerRenderer.setBackground(new Color(0xAAAAAFF)); //Cambiamos el fondo del header
+        headerRenderer.setHorizontalAlignment(JLabel.CENTER); //Centramos el texto del header
+        for (int i = 0; i < jTablePalabras.getModel().getColumnCount(); i++) { //Para cada columna
+            jTablePalabras.getColumnModel().getColumn(i).setHeaderRenderer(headerRenderer); //Establecemos el header al que hemos creado
+        }
+    }
+    private void establecerColoresJOptionPane(){
+        UIManager UI=new UIManager();
+        UIManager.put("control", new Color(0xEBEBFF)); //Cambia todos los fondos del JOptionPane
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -47,11 +73,12 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jLabelTitulo = new javax.swing.JLabel();
         jTextFieldPalabra = new javax.swing.JTextField();
         jButtonIngresar = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
+        jButtonMostrar = new javax.swing.JButton();
+        jScrollPaneTable = new javax.swing.JScrollPane();
         jTablePalabras = new javax.swing.JTable();
-        jLabelAviso = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jPanel.setBackground(new java.awt.Color(235, 235, 255));
         jPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -73,27 +100,43 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 jButtonIngresarActionPerformed(evt);
             }
         });
-        jPanel.add(jButtonIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 270, -1));
+        jPanel.add(jButtonIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 130, -1));
+
+        jButtonMostrar.setBackground(new java.awt.Color(204, 204, 255));
+        jButtonMostrar.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        jButtonMostrar.setText("Mostrar");
+        jButtonMostrar.setFocusPainted(false);
+        jButtonMostrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonMostrarActionPerformed(evt);
+            }
+        });
+        jPanel.add(jButtonMostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 60, 130, -1));
+
+        jScrollPaneTable.setOpaque(false);
 
         jTablePalabras.setBackground(new java.awt.Color(204, 204, 255));
         jTablePalabras.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         jTablePalabras.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null}
+
             },
             new String [] {
                 "Palabras"
             }
-        ));
-        jTablePalabras.setOpaque(false);
-        jScrollPane1.setViewportView(jTablePalabras);
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false
+            };
 
-        jPanel.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 91, 270, 220));
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jTablePalabras.setRowSelectionAllowed(false);
+        jScrollPaneTable.setViewportView(jTablePalabras);
 
-        jLabelAviso.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
-        jLabelAviso.setForeground(new java.awt.Color(255, 0, 0));
-        jLabelAviso.setText("No hay palabras ingresadas");
-        jPanel.add(jLabelAviso, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 340, -1, -1));
+        jPanel.add(jScrollPaneTable, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 91, 270, 220));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -103,34 +146,41 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 384, Short.MAX_VALUE)
+            .addComponent(jPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 347, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonIngresarActionPerformed
-        String palabra=jTextFieldPalabra.getText();
-        jTextFieldPalabra.setText("");
-        if (palabra.equals("") || comprobarNumero(palabra) || palabra.length()>10){
-            AlertaPalabra alerta=new AlertaPalabra(this,true);
+        String palabra=jTextFieldPalabra.getText(); //Obtenemos la palabra
+        jTextFieldPalabra.setText(""); //Vaciamos el campo de texto
+        if (!comprobarValida(palabra) || palabra.length()>10){ //Si contiene números o símbolos, o si mide más de 10 letras, no es válida
+            AlertaPalabra alerta=new AlertaPalabra(this,true); //Avisamos al usuario con un diálogo de error
             alerta.setVisible(true);
         }
-        else{
-            ListaPalabras.anadirPalabra(palabra);
-            refrescarTabla();
+        else{ //Si cumple los requisitos
+            ListaPalabras.anadirPalabra(palabra); //La añadimos a la lista
+            
         }
-        comprobarPalabras(jLabelAviso);
+        
     }//GEN-LAST:event_jButtonIngresarActionPerformed
 
-    public static boolean comprobarNumero(String palabra){ //Este método comprueba si el parámetro que recibe es un numero
-        return palabra.matches(".*\\d.*"); //Devuelve true si la palabara contiene números
+    private void jButtonMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMostrarActionPerformed
+        refrescarTabla(); //Refrescamos la tabla
+        comprobarPalabras(); //Comprobamos si hay palabras o no
+    }//GEN-LAST:event_jButtonMostrarActionPerformed
+
+    public static boolean comprobarValida(String palabra){ //Este método comprueba si el parámetro que recibe es una plaabra válida
+        return palabra.matches("[a-zA-Z]+"); //Devuelve true si la palabara solo contiene letras
     }
-    public static void comprobarPalabras(JLabel aviso){
-        if (ListaPalabras.getPalabras().size()==0){
-           aviso.setVisible(true);
+    
+    
+    
+    public void comprobarPalabras(){
+        if (ListaPalabras.getPalabras().size()==0){ //Si el tamaño del ArrayList es 0, no hay palabras
+           JOptionPane.showMessageDialog(this, "No hay palabras ingresadas", "Aviso", JOptionPane.INFORMATION_MESSAGE); //Mostramos un mensaje
         }
-        else aviso.setVisible(false);
     }
     /**
      * @param args the command line arguments
@@ -169,10 +219,10 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonIngresar;
-    private javax.swing.JLabel jLabelAviso;
+    private javax.swing.JButton jButtonMostrar;
     private javax.swing.JLabel jLabelTitulo;
     private javax.swing.JPanel jPanel;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPaneTable;
     private javax.swing.JTable jTablePalabras;
     private javax.swing.JTextField jTextFieldPalabra;
     // End of variables declaration//GEN-END:variables

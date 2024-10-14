@@ -5,12 +5,11 @@
  */
 package actividad1;
 
-import java.awt.Color;
 import java.util.Random;
 
 /**
  *
- * @author Tarde
+ * @author Daniel Monforte Ibias
  */
 public class PantallaPrincipal extends javax.swing.JFrame {
 
@@ -68,9 +67,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jButtonGenerarAleatorio.setForeground(new java.awt.Color(226, 255, 255));
         jButtonGenerarAleatorio.setText("Generar");
         jButtonGenerarAleatorio.setBorderPainted(false);
-        jButtonGenerarAleatorio.setFocusPainted(false);
         jButtonGenerarAleatorio.setMargin(new java.awt.Insets(0, 0, 0, 0));
-        jButtonGenerarAleatorio.setRequestFocusEnabled(false);
         jButtonGenerarAleatorio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonGenerarAleatorioActionPerformed(evt);
