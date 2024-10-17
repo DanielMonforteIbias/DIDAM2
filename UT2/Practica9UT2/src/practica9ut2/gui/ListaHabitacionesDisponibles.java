@@ -3,22 +3,32 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package practica9ut2;
+package practica9ut2.gui;
+
+import java.util.List;
+import javax.swing.DefaultListModel;
 
 /**
  *
  * @author Usuario
  */
 public class ListaHabitacionesDisponibles extends javax.swing.JDialog {
-
+    VentanaHotel principal;
     /**
      * Creates new form ListaHabitacionesDisponibles
      */
     public ListaHabitacionesDisponibles(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
+        principal=(VentanaHotel)parent;
         initComponents();
     }
-
+    private void actualizarLista(List<String>lista){
+        DefaultListModel<String> model = new DefaultListModel<String>();
+        for(String s:lista){ //Para cada elemento de la lista
+            model.addElement(s); //Lo añadimos al modelo
+        }
+        jListHabitacionesDisponibles.setModel(model); //Establecemos el modelo de la JList recibida como el que hemos definido
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -28,6 +38,7 @@ public class ListaHabitacionesDisponibles extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel = new javax.swing.JPanel();
         jLabelHabitacionesDisponibles = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jListHabitacionesDisponibles = new javax.swing.JList<>();
@@ -38,25 +49,42 @@ public class ListaHabitacionesDisponibles extends javax.swing.JDialog {
 
         jScrollPane1.setViewportView(jListHabitacionesDisponibles);
 
+        javax.swing.GroupLayout jPanelLayout = new javax.swing.GroupLayout(jPanel);
+        jPanel.setLayout(jPanelLayout);
+        jPanelLayout.setHorizontalGroup(
+            jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelLayout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(jLabelHabitacionesDisponibles)
+                .addContainerGap(27, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(41, 41, 41))
+        );
+        jPanelLayout.setVerticalGroup(
+            jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabelHabitacionesDisponibles)
+                .addGap(30, 30, 30)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(42, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabelHabitacionesDisponibles)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(193, Short.MAX_VALUE))
+                .addComponent(jPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(jLabelHabitacionesDisponibles)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(80, Short.MAX_VALUE))
+                .addComponent(jPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -107,6 +135,7 @@ public class ListaHabitacionesDisponibles extends javax.swing.JDialog {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabelHabitacionesDisponibles;
     private javax.swing.JList<String> jListHabitacionesDisponibles;
+    private javax.swing.JPanel jPanel;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

@@ -35,6 +35,8 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jButton6 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
+        jButton9 = new javax.swing.JButton();
+        jButton10 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new java.awt.FlowLayout());
@@ -62,6 +64,12 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         jButton8.setText("jButton8");
         getContentPane().add(jButton8);
+
+        jButton9.setText("jButton9");
+        getContentPane().add(jButton9);
+
+        jButton10.setText("jButton10");
+        getContentPane().add(jButton10);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -103,6 +111,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -110,5 +119,6 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
     // End of variables declaration//GEN-END:variables
 }

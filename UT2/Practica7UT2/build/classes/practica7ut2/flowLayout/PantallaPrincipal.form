@@ -63,5 +63,15 @@
         <Property name="text" type="java.lang.String" value="jButton8"/>
       </Properties>
     </Component>
+    <Component class="javax.swing.JButton" name="jButton9">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jButton9"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButton10">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jButton10"/>
+      </Properties>
+    </Component>
   </SubComponents>
 </Form>

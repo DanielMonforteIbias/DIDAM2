@@ -3,9 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package practica9ut2;
+package practica9ut2.gui;
 
+import java.util.List;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import practica9ut2.beans.Habitacion;
+import practica9ut2.logica.ListaHabitaciones;
 
 /**
  *
@@ -18,6 +22,19 @@ public class VentanaHotel extends javax.swing.JFrame {
      */
     public VentanaHotel() {
         initComponents();
+        ListaHabitaciones.inicializarLista();
+    }
+    
+    private void actualizarTabla(){
+        DefaultTableModel dtm=new DefaultTableModel();
+        dtm.setColumnIdentifiers(new String[]{"Número habitación","Tipo habitación","Disponibilidad"});
+        for (Habitacion h:ListaHabitaciones.getHabitaciones()){
+            int random=(int)(Math.random()*2); //Generamos un numero aleatorio entre 0 y 1
+            if (random==1) h.setDisponibilidad("Disponible");
+            else h.setDisponibilidad("Ocupada");
+            dtm.addRow(h.toArrayString());
+        }
+        jTableHabitaciones.setModel(dtm);
     }
 
     /**
@@ -88,7 +105,7 @@ public class VentanaHotel extends javax.swing.JFrame {
                     .addGroup(jPanelRegistroHuespedesLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabelInformacionIngreso)))
-                .addContainerGap(245, Short.MAX_VALUE))
+                .addContainerGap(278, Short.MAX_VALUE))
         );
         jPanelRegistroHuespedesLayout.setVerticalGroup(
             jPanelRegistroHuespedesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -120,12 +137,25 @@ public class VentanaHotel extends javax.swing.JFrame {
                 {null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3"
+                "Número habitación", "Tipo habitación", "Disponibilidad"
             }
-        ));
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(jTableHabitaciones);
 
         jButtonActualizarDisponibilidad.setText("Actualizar disponibilidad de habitaciones");
+        jButtonActualizarDisponibilidad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonActualizarDisponibilidadActionPerformed(evt);
+            }
+        });
 
         jButtonVerHabitacionesDisponibles.setText("Ver habitaciones disponibles");
         jButtonVerHabitacionesDisponibles.addActionListener(new java.awt.event.ActionListener() {
@@ -138,13 +168,13 @@ public class VentanaHotel extends javax.swing.JFrame {
         jPanelDisponibilidadHabitaciones.setLayout(jPanelDisponibilidadHabitacionesLayout);
         jPanelDisponibilidadHabitacionesLayout.setHorizontalGroup(
             jPanelDisponibilidadHabitacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 669, Short.MAX_VALUE)
             .addGroup(jPanelDisponibilidadHabitacionesLayout.createSequentialGroup()
                 .addGap(25, 25, 25)
                 .addComponent(jButtonActualizarDisponibilidad)
                 .addGap(114, 114, 114)
-                .addComponent(jButtonVerHabitacionesDisponibles)
-                .addContainerGap(83, Short.MAX_VALUE))
+                .addComponent(jButtonVerHabitacionesDisponibles, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanelDisponibilidadHabitacionesLayout.setVerticalGroup(
             jPanelDisponibilidadHabitacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -154,7 +184,7 @@ public class VentanaHotel extends javax.swing.JFrame {
                 .addGroup(jPanelDisponibilidadHabitacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonActualizarDisponibilidad)
                     .addComponent(jButtonVerHabitacionesDisponibles))
-                .addGap(0, 70, Short.MAX_VALUE))
+                .addGap(0, 74, Short.MAX_VALUE))
         );
 
         jTabbedPane.addTab("Disponibilidad de habitaciones", jPanelDisponibilidadHabitaciones);
@@ -163,13 +193,13 @@ public class VentanaHotel extends javax.swing.JFrame {
         jPanelMain.setLayout(jPanelMainLayout);
         jPanelMainLayout.setHorizontalGroup(
             jPanelMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 685, Short.MAX_VALUE)
+            .addGap(0, 674, Short.MAX_VALUE)
             .addGroup(jPanelMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(jTabbedPane, javax.swing.GroupLayout.DEFAULT_SIZE, 685, Short.MAX_VALUE))
         );
         jPanelMainLayout.setVerticalGroup(
             jPanelMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 532, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
             .addGroup(jPanelMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanelMainLayout.createSequentialGroup()
                     .addComponent(jTabbedPane, javax.swing.GroupLayout.PREFERRED_SIZE, 532, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -184,7 +214,9 @@ public class VentanaHotel extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelMain, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanelMain, javax.swing.GroupLayout.PREFERRED_SIZE, 492, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -199,6 +231,7 @@ public class VentanaHotel extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonDetallesReservaActionPerformed
 
     private void jButtonVerHabitacionesDisponiblesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVerHabitacionesDisponiblesActionPerformed
+
         ListaHabitacionesDisponibles dialogo=new ListaHabitacionesDisponibles(this,false);
         dialogo.setVisible(true);
     }//GEN-LAST:event_jButtonVerHabitacionesDisponiblesActionPerformed
@@ -210,6 +243,10 @@ public class VentanaHotel extends javax.swing.JFrame {
         if (jCheckBoxDesayunoIncluido.isSelected()) mensaje+=" con desayuno incluido";
         jLabelInformacionIngreso.setText(mensaje);
     }//GEN-LAST:event_jButtonRegistrarHuespedActionPerformed
+
+    private void jButtonActualizarDisponibilidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonActualizarDisponibilidadActionPerformed
+        actualizarTabla();
+    }//GEN-LAST:event_jButtonActualizarDisponibilidadActionPerformed
 
     /**
      * @param args the command line arguments
