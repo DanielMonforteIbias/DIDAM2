@@ -96,8 +96,14 @@
         <Property name="text" type="java.lang.String" value="Aceptar"/>
         <Property name="toolTipText" type="java.lang.String" value=""/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonAceptarActionPerformed"/>
+      </Events>
     </Component>
     <Component class="org.netbeans.validation.api.ui.swing.ValidationPanel" name="validationPanel">
+      <Events>
+        <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="validationPanelStateChanged"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

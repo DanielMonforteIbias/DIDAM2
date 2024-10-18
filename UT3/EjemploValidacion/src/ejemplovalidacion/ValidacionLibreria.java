@@ -6,6 +6,7 @@
 package ejemplovalidacion;
 
 import java.util.Locale;
+import javax.swing.JOptionPane;
 import org.netbeans.validation.api.builtin.stringvalidation.StringValidators;
 import org.netbeans.validation.api.ui.ValidationGroup;
 
@@ -20,6 +21,7 @@ public class ValidacionLibreria extends javax.swing.JFrame {
      */
     public ValidacionLibreria() {
         initComponents();
+        jButtonAceptar.setEnabled(false);
         ValidationGroup group=validationPanel.getValidationGroup();
         group.add(jTextFieldNombre,StringValidators.REQUIRE_NON_EMPTY_STRING);
         group.add(jTextFieldEdad,StringValidators.REQUIRE_VALID_INTEGER);
@@ -54,6 +56,17 @@ public class ValidacionLibreria extends javax.swing.JFrame {
 
         jButtonAceptar.setText("Aceptar");
         jButtonAceptar.setToolTipText("");
+        jButtonAceptar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAceptarActionPerformed(evt);
+            }
+        });
+
+        validationPanel.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                validationPanelStateChanged(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -96,6 +109,15 @@ public class ValidacionLibreria extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void validationPanelStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_validationPanelStateChanged
+        if (validationPanel.getProblem()==null) jButtonAceptar.setEnabled(true);
+        else jButtonAceptar.setEnabled(false);
+    }//GEN-LAST:event_validationPanelStateChanged
+
+    private void jButtonAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAceptarActionPerformed
+        JOptionPane.showMessageDialog(this,"Formulario correcto");
+    }//GEN-LAST:event_jButtonAceptarActionPerformed
 
     /**
      * @param args the command line arguments
