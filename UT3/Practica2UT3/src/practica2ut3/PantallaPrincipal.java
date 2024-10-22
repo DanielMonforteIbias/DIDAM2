@@ -21,6 +21,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
      */
     public PantallaPrincipal() {
         initComponents();
+        jButtonAceitar.setEnabled(false);
         ValidationGroup group=validationPanel.getValidationGroup();
         group.add(jTextFieldNome,StringValidators.REQUIRE_NON_EMPTY_STRING);
         group.add(jTextFieldCodigoPostal,StringValidators.minLength(5));
@@ -58,6 +59,12 @@ public class PantallaPrincipal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButtonAceitar, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 200, 90, -1));
+
+        validationPanel.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                validationPanelStateChanged(evt);
+            }
+        });
         getContentPane().add(validationPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(-2, 11, 410, 62));
 
         jTextFieldNome.setName("Nome"); // NOI18N
@@ -78,6 +85,11 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private void jButtonAceitarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAceitarActionPerformed
         JOptionPane.showMessageDialog(this,"Forma correta");
     }//GEN-LAST:event_jButtonAceitarActionPerformed
+
+    private void validationPanelStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_validationPanelStateChanged
+        if (validationPanel.getProblem()==null) jButtonAceitar.setEnabled(true);
+        else jButtonAceitar.setEnabled(false);
+    }//GEN-LAST:event_validationPanelStateChanged
 
     /**
      * @param args the command line arguments
