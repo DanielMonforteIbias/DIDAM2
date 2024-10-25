@@ -7,13 +7,14 @@ package jpanelimagen;
 
 import java.awt.Component;
 import java.beans.PropertyEditorSupport;
+import java.io.File;
 
 /**
  *
  * @author Tarde
  */
 public class ImagenFondoPropertyEditorSupport extends PropertyEditorSupport{
-    private ImagenFondoPanel imagenFondoPanel;
+    private ImagenFondoPanel imagenFondoPanel=new ImagenFondoPanel();
     @Override
     public boolean supportsCustomEditor() {
         return true; //To change body of generated methods, choose Tools | Templates.
@@ -26,7 +27,11 @@ public class ImagenFondoPropertyEditorSupport extends PropertyEditorSupport{
 
     @Override
     public String getJavaInitializationString() {
-        return super.getJavaInitializationString(); //To change body of generated methods, choose Tools | Templates.
+        ImagenFondo imagenFondo = imagenFondoPanel.getSelectedValue();
+        File rutaImagen=(File)imagenFondo.getRutaImagen();
+        String ruta=rutaImagen.getAbsolutePath();
+        ruta=ruta.replace("\\","/");
+        return "new jpanelimagen.ImagenFondo("+"new java.io.File(\""+ruta+"\"),"+imagenFondo.getOpacidad()+"f)"; //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override

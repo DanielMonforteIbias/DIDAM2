@@ -180,6 +180,7 @@ public class JPanelImagenBeanInfo extends SimpleBeanInfo {
             properties[PROPERTY_hierarchyListeners] = new PropertyDescriptor ( "hierarchyListeners", jpanelimagen.JPanelImagen.class, "getHierarchyListeners", null ); // NOI18N
             properties[PROPERTY_ignoreRepaint] = new PropertyDescriptor ( "ignoreRepaint", jpanelimagen.JPanelImagen.class, "getIgnoreRepaint", "setIgnoreRepaint" ); // NOI18N
             properties[PROPERTY_imagenFondo] = new PropertyDescriptor ( "imagenFondo", jpanelimagen.JPanelImagen.class, "getImagenFondo", "setImagenFondo" ); // NOI18N
+            properties[PROPERTY_imagenFondo].setPropertyEditorClass ( jpanelimagen.ImagenFondoPropertyEditorSupport.class );
             properties[PROPERTY_inheritsPopupMenu] = new PropertyDescriptor ( "inheritsPopupMenu", jpanelimagen.JPanelImagen.class, "getInheritsPopupMenu", "setInheritsPopupMenu" ); // NOI18N
             properties[PROPERTY_inputContext] = new PropertyDescriptor ( "inputContext", jpanelimagen.JPanelImagen.class, "getInputContext", null ); // NOI18N
             properties[PROPERTY_inputMap] = new PropertyDescriptor ( "inputMap", jpanelimagen.JPanelImagen.class, "getInputMap", null ); // NOI18N
