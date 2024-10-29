@@ -34,11 +34,11 @@ public class RegistroJugador extends javax.swing.JFrame {
         jLabelNick = new javax.swing.JLabel();
         jLabelEdad = new javax.swing.JLabel();
         jLabelPassword = new javax.swing.JLabel();
-        jTextFieldNombre = new javax.swing.JTextField();
         jTextFieldNick = new javax.swing.JTextField();
         jTextFieldEdad = new javax.swing.JTextField();
         jTextFieldPassword = new javax.swing.JTextField();
         jButtonEnviar = new javax.swing.JButton();
+        jTextFieldNombre = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -47,62 +47,95 @@ public class RegistroJugador extends javax.swing.JFrame {
         jPanelImagenFondo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabelNombre.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
+        jLabelNombre.setForeground(new java.awt.Color(255, 255, 255));
         jLabelNombre.setText("Nombre:");
-        jPanelImagenFondo.add(jLabelNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 20, -1, -1));
+        jPanelImagenFondo.add(jLabelNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, -1));
 
         jLabelNick.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
+        jLabelNick.setForeground(new java.awt.Color(255, 255, 255));
         jLabelNick.setText("Nick:");
-        jPanelImagenFondo.add(jLabelNick, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 80, -1, -1));
+        jPanelImagenFondo.add(jLabelNick, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, -1));
 
         jLabelEdad.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
+        jLabelEdad.setForeground(new java.awt.Color(255, 255, 255));
         jLabelEdad.setText("Edad:");
-        jPanelImagenFondo.add(jLabelEdad, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 140, -1, -1));
+        jPanelImagenFondo.add(jLabelEdad, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, -1, -1));
 
         jLabelPassword.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
+        jLabelPassword.setForeground(new java.awt.Color(255, 255, 255));
         jLabelPassword.setText("Password: ");
-        jPanelImagenFondo.add(jLabelPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 190, -1, -1));
-        jPanelImagenFondo.add(jTextFieldNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 30, 190, 20));
-        jPanelImagenFondo.add(jTextFieldNick, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 90, 190, -1));
-        jPanelImagenFondo.add(jTextFieldEdad, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 150, 190, -1));
-        jPanelImagenFondo.add(jTextFieldPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 200, 190, -1));
+        jPanelImagenFondo.add(jLabelPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, -1, -1));
 
-        jButtonEnviar.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
+        jTextFieldNick.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
+        jPanelImagenFondo.add(jTextFieldNick, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 100, 190, -1));
+
+        jTextFieldEdad.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
+        jPanelImagenFondo.add(jTextFieldEdad, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 160, 190, -1));
+
+        jTextFieldPassword.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
+        jPanelImagenFondo.add(jTextFieldPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 210, 190, -1));
+
+        jButtonEnviar.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
         jButtonEnviar.setText("Enviar");
         jButtonEnviar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonEnviarActionPerformed(evt);
             }
         });
-        jPanelImagenFondo.add(jButtonEnviar, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 120, -1, -1));
+        jPanelImagenFondo.add(jButtonEnviar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 370, -1));
+
+        jTextFieldNombre.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
+        jPanelImagenFondo.add(jTextFieldNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 40, 190, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelImagenFondo, javax.swing.GroupLayout.PREFERRED_SIZE, 623, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanelImagenFondo, javax.swing.GroupLayout.PREFERRED_SIZE, 408, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelImagenFondo, javax.swing.GroupLayout.DEFAULT_SIZE, 313, Short.MAX_VALUE)
+            .addComponent(jPanelImagenFondo, javax.swing.GroupLayout.DEFAULT_SIZE, 320, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonEnviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEnviarActionPerformed
-        int edad=Integer.parseInt(jTextFieldEdad.getText());
+        boolean camposValidos=true;
+        String nombre=jTextFieldNombre.getText();
+        String edadString=jTextFieldEdad.getText();
         String nick=jTextFieldNick.getText();
-        if(edad>=18){
-            JOptionPane.showMessageDialog(this,"Bienvenido al juego, "+nick,"Bienvenida",JOptionPane.INFORMATION_MESSAGE);
-            EleccionPersonaje eleccionPersonaje=new EleccionPersonaje();
-            eleccionPersonaje.setVisible(true);
-            this.setVisible(false);
+        String password=jTextFieldPassword.getText();
+        int edad=0;
+        
+        if(isNumero(edadString))edad=Integer.parseInt(edadString); //Edad se convertira solo a int si solo se compone de numeros
+        else {
+            JOptionPane.showMessageDialog(this,"La edad debe ser un número","Error campos",JOptionPane.ERROR_MESSAGE);
+            camposValidos=false;
         }
-        else{
-            JOptionPane.showMessageDialog(this,"Este juego es solo para mayores de edad","PG-18",JOptionPane.ERROR_MESSAGE);
+        
+        if (nombre.equals("")||nick.equals("")||password.equals("") ||edadString.equals("")) camposValidos=false;
+        if(camposValidos){
+            if(edad>=18){
+                JOptionPane.showMessageDialog(this,"Bienvenido al juego, "+nick,"Bienvenida",JOptionPane.INFORMATION_MESSAGE);
+                EleccionPersonaje eleccionPersonaje=new EleccionPersonaje();
+                eleccionPersonaje.setVisible(true);
+                this.setVisible(false);
+            }
+            else{
+                JOptionPane.showMessageDialog(this,"Este juego es solo para mayores de edad","PG-18",JOptionPane.ERROR_MESSAGE);
+            }
         }
+        else JOptionPane.showMessageDialog(this,"Todos los campos deben rellenarse","Error campos",JOptionPane.ERROR_MESSAGE);
+        
+        
+        
     }//GEN-LAST:event_jButtonEnviarActionPerformed
 
+    public boolean isNumero(String s){
+        return s.matches("[0-9]+");
+    }
     /**
      * @param args the command line arguments
      */

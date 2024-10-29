@@ -27,17 +27,238 @@ public class EleccionPersonaje extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanelImagen1 = new jpanelimagen.JPanelImagen();
+        jPanelCharacters = new javax.swing.JPanel();
+        jPanelImagen2 = new jpanelimagen.JPanelImagen();
+        jPanelImagen3 = new jpanelimagen.JPanelImagen();
+        jPanelImagen4 = new jpanelimagen.JPanelImagen();
+        jPanelImagen5 = new jpanelimagen.JPanelImagen();
+        jPanelImagen6 = new jpanelimagen.JPanelImagen();
+        jPanelImagen7 = new jpanelimagen.JPanelImagen();
+        jPanelImagen8 = new jpanelimagen.JPanelImagen();
+        jPanelImagen9 = new jpanelimagen.JPanelImagen();
+        jPanelImagen10 = new jpanelimagen.JPanelImagen();
+        jPanelImagen11 = new jpanelimagen.JPanelImagen();
+        jPanelImagen12 = new jpanelimagen.JPanelImagen();
+        jPanelImagen13 = new jpanelimagen.JPanelImagen();
+        jPanelImagen14 = new jpanelimagen.JPanelImagen();
+        jPanelImagen15 = new jpanelimagen.JPanelImagen();
+        jPanelImagen16 = new jpanelimagen.JPanelImagen();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanelImagen1.setImagenFondo(new jpanelimagen.ImagenFondo(new java.io.File("C:/Program Files/NetBeans 8.2"),0.5f));
+        jPanelImagen1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanelCharacters.setOpaque(false);
+        jPanelCharacters.setLayout(new java.awt.GridLayout(3, 5));
+
+        javax.swing.GroupLayout jPanelImagen2Layout = new javax.swing.GroupLayout(jPanelImagen2);
+        jPanelImagen2.setLayout(jPanelImagen2Layout);
+        jPanelImagen2Layout.setHorizontalGroup(
+            jPanelImagen2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jPanelImagen2Layout.setVerticalGroup(
+            jPanelImagen2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        jPanelCharacters.add(jPanelImagen2);
+
+        javax.swing.GroupLayout jPanelImagen3Layout = new javax.swing.GroupLayout(jPanelImagen3);
+        jPanelImagen3.setLayout(jPanelImagen3Layout);
+        jPanelImagen3Layout.setHorizontalGroup(
+            jPanelImagen3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jPanelImagen3Layout.setVerticalGroup(
+            jPanelImagen3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        jPanelCharacters.add(jPanelImagen3);
+
+        javax.swing.GroupLayout jPanelImagen4Layout = new javax.swing.GroupLayout(jPanelImagen4);
+        jPanelImagen4.setLayout(jPanelImagen4Layout);
+        jPanelImagen4Layout.setHorizontalGroup(
+            jPanelImagen4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jPanelImagen4Layout.setVerticalGroup(
+            jPanelImagen4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        jPanelCharacters.add(jPanelImagen4);
+
+        javax.swing.GroupLayout jPanelImagen5Layout = new javax.swing.GroupLayout(jPanelImagen5);
+        jPanelImagen5.setLayout(jPanelImagen5Layout);
+        jPanelImagen5Layout.setHorizontalGroup(
+            jPanelImagen5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jPanelImagen5Layout.setVerticalGroup(
+            jPanelImagen5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        jPanelCharacters.add(jPanelImagen5);
+
+        javax.swing.GroupLayout jPanelImagen6Layout = new javax.swing.GroupLayout(jPanelImagen6);
+        jPanelImagen6.setLayout(jPanelImagen6Layout);
+        jPanelImagen6Layout.setHorizontalGroup(
+            jPanelImagen6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jPanelImagen6Layout.setVerticalGroup(
+            jPanelImagen6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        jPanelCharacters.add(jPanelImagen6);
+
+        javax.swing.GroupLayout jPanelImagen7Layout = new javax.swing.GroupLayout(jPanelImagen7);
+        jPanelImagen7.setLayout(jPanelImagen7Layout);
+        jPanelImagen7Layout.setHorizontalGroup(
+            jPanelImagen7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jPanelImagen7Layout.setVerticalGroup(
+            jPanelImagen7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        jPanelCharacters.add(jPanelImagen7);
+
+        javax.swing.GroupLayout jPanelImagen8Layout = new javax.swing.GroupLayout(jPanelImagen8);
+        jPanelImagen8.setLayout(jPanelImagen8Layout);
+        jPanelImagen8Layout.setHorizontalGroup(
+            jPanelImagen8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jPanelImagen8Layout.setVerticalGroup(
+            jPanelImagen8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        jPanelCharacters.add(jPanelImagen8);
+
+        javax.swing.GroupLayout jPanelImagen9Layout = new javax.swing.GroupLayout(jPanelImagen9);
+        jPanelImagen9.setLayout(jPanelImagen9Layout);
+        jPanelImagen9Layout.setHorizontalGroup(
+            jPanelImagen9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jPanelImagen9Layout.setVerticalGroup(
+            jPanelImagen9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        jPanelCharacters.add(jPanelImagen9);
+
+        javax.swing.GroupLayout jPanelImagen10Layout = new javax.swing.GroupLayout(jPanelImagen10);
+        jPanelImagen10.setLayout(jPanelImagen10Layout);
+        jPanelImagen10Layout.setHorizontalGroup(
+            jPanelImagen10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jPanelImagen10Layout.setVerticalGroup(
+            jPanelImagen10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        jPanelCharacters.add(jPanelImagen10);
+
+        javax.swing.GroupLayout jPanelImagen11Layout = new javax.swing.GroupLayout(jPanelImagen11);
+        jPanelImagen11.setLayout(jPanelImagen11Layout);
+        jPanelImagen11Layout.setHorizontalGroup(
+            jPanelImagen11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jPanelImagen11Layout.setVerticalGroup(
+            jPanelImagen11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        jPanelCharacters.add(jPanelImagen11);
+
+        javax.swing.GroupLayout jPanelImagen12Layout = new javax.swing.GroupLayout(jPanelImagen12);
+        jPanelImagen12.setLayout(jPanelImagen12Layout);
+        jPanelImagen12Layout.setHorizontalGroup(
+            jPanelImagen12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jPanelImagen12Layout.setVerticalGroup(
+            jPanelImagen12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        jPanelCharacters.add(jPanelImagen12);
+
+        javax.swing.GroupLayout jPanelImagen13Layout = new javax.swing.GroupLayout(jPanelImagen13);
+        jPanelImagen13.setLayout(jPanelImagen13Layout);
+        jPanelImagen13Layout.setHorizontalGroup(
+            jPanelImagen13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        jPanelImagen13Layout.setVerticalGroup(
+            jPanelImagen13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 150, Short.MAX_VALUE)
+        );
+
+        jPanelCharacters.add(jPanelImagen13);
+
+        javax.swing.GroupLayout jPanelImagen14Layout = new javax.swing.GroupLayout(jPanelImagen14);
+        jPanelImagen14.setLayout(jPanelImagen14Layout);
+        jPanelImagen14Layout.setHorizontalGroup(
+            jPanelImagen14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        jPanelImagen14Layout.setVerticalGroup(
+            jPanelImagen14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 150, Short.MAX_VALUE)
+        );
+
+        jPanelCharacters.add(jPanelImagen14);
+
+        javax.swing.GroupLayout jPanelImagen15Layout = new javax.swing.GroupLayout(jPanelImagen15);
+        jPanelImagen15.setLayout(jPanelImagen15Layout);
+        jPanelImagen15Layout.setHorizontalGroup(
+            jPanelImagen15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        jPanelImagen15Layout.setVerticalGroup(
+            jPanelImagen15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 150, Short.MAX_VALUE)
+        );
+
+        jPanelCharacters.add(jPanelImagen15);
+
+        javax.swing.GroupLayout jPanelImagen16Layout = new javax.swing.GroupLayout(jPanelImagen16);
+        jPanelImagen16.setLayout(jPanelImagen16Layout);
+        jPanelImagen16Layout.setHorizontalGroup(
+            jPanelImagen16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        jPanelImagen16Layout.setVerticalGroup(
+            jPanelImagen16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 150, Short.MAX_VALUE)
+        );
+
+        jPanelCharacters.add(jPanelImagen16);
+
+        jPanelImagen1.add(jPanelCharacters, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 40, 500, 450));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jPanelImagen1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(jPanelImagen1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -79,5 +300,22 @@ public class EleccionPersonaje extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel jPanelCharacters;
+    private jpanelimagen.JPanelImagen jPanelImagen1;
+    private jpanelimagen.JPanelImagen jPanelImagen10;
+    private jpanelimagen.JPanelImagen jPanelImagen11;
+    private jpanelimagen.JPanelImagen jPanelImagen12;
+    private jpanelimagen.JPanelImagen jPanelImagen13;
+    private jpanelimagen.JPanelImagen jPanelImagen14;
+    private jpanelimagen.JPanelImagen jPanelImagen15;
+    private jpanelimagen.JPanelImagen jPanelImagen16;
+    private jpanelimagen.JPanelImagen jPanelImagen2;
+    private jpanelimagen.JPanelImagen jPanelImagen3;
+    private jpanelimagen.JPanelImagen jPanelImagen4;
+    private jpanelimagen.JPanelImagen jPanelImagen5;
+    private jpanelimagen.JPanelImagen jPanelImagen6;
+    private jpanelimagen.JPanelImagen jPanelImagen7;
+    private jpanelimagen.JPanelImagen jPanelImagen8;
+    private jpanelimagen.JPanelImagen jPanelImagen9;
     // End of variables declaration//GEN-END:variables
 }
