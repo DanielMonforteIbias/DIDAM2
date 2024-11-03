@@ -18,20 +18,29 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <Component id="jLabelOpacidad" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jSliderOpacidad" pref="0" max="32767" attributes="0"/>
+                      <Component id="jLabelSaturacion" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jSliderSaturacion" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
-                      <Component id="jLabelImagen" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                      <Component id="jTextFieldRuta" min="-2" pref="191" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="jLabelOpacidad" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="jSliderOpacidad" pref="0" max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Component id="jLabelImagen" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                              <Component id="jTextFieldRuta" min="-2" pref="191" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="jButtonAbrirRuta" min="-2" pref="62" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="jButtonAbrirRuta" min="-2" pref="62" max="-2" attributes="0"/>
               <EmptySpace pref="27" max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -50,7 +59,12 @@
                   <Component id="jLabelOpacidad" min="-2" max="-2" attributes="0"/>
                   <Component id="jSliderOpacidad" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="164" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jLabelSaturacion" min="-2" max="-2" attributes="0"/>
+                  <Component id="jSliderSaturacion" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="79" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -80,6 +94,17 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JSlider" name="jSliderOpacidad">
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelSaturacion">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Saturaci&#xf3;n:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JSlider" name="jSliderSaturacion">
+      <Properties>
+        <Property name="maximum" type="int" value="200"/>
+        <Property name="value" type="int" value="100"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>

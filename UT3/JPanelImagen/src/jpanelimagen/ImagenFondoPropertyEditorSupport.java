@@ -31,7 +31,7 @@ public class ImagenFondoPropertyEditorSupport extends PropertyEditorSupport{
         File rutaImagen=(File)imagenFondo.getRutaImagen();
         String ruta=rutaImagen.getAbsolutePath();
         ruta=ruta.replace("\\","/");
-        return "new jpanelimagen.ImagenFondo("+"new java.io.File(\""+ruta+"\"),"+imagenFondo.getOpacidad()+"f)"; //To change body of generated methods, choose Tools | Templates.
+        return "new jpanelimagen.ImagenFondo("+"new java.io.File(\""+ruta+"\"),"+imagenFondo.getOpacidad()+"f,"+imagenFondo.getSaturacion()+"f)"; //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override

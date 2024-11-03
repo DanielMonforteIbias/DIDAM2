@@ -5,6 +5,7 @@
  */
 package practica6ut3;
 
+import java.applet.AudioClip;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
@@ -14,6 +15,7 @@ import javax.swing.JOptionPane;
  */
 public class PantallaPrincipal extends javax.swing.JFrame {
 
+    AudioClip sound=java.applet.Applet.newAudioClip(getClass().getResource("/practica6ut3/sounds/Meow.wav"));
     /**
      * Creates new form PantallaPrincipal
      */
@@ -76,13 +78,25 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jRadioButtonWhale.setText("Whale");
         jPanel.add(jRadioButtonWhale, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, -1, -1));
 
+        jButtonPlay.setBackground(new java.awt.Color(51, 153, 255));
         jButtonPlay.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButtonPlay.setText("Play");
         jButtonPlay.setActionCommand("");
+        jButtonPlay.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonPlayActionPerformed(evt);
+            }
+        });
         jPanel.add(jButtonPlay, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, -1, -1));
 
+        jButtonStop.setBackground(new java.awt.Color(255, 102, 102));
         jButtonStop.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButtonStop.setText("Stop");
+        jButtonStop.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonStopActionPerformed(evt);
+            }
+        });
         jPanel.add(jButtonStop, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 220, -1, -1));
 
         jButtonCorrect.setBackground(new java.awt.Color(0, 255, 0));
@@ -118,6 +132,14 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         if(jRadioButtonCat.isSelected()) JOptionPane.showMessageDialog(this,"Correct! The answer was Cat","Correct!",JOptionPane.INFORMATION_MESSAGE);
         else JOptionPane.showMessageDialog(this,"Incorrect! The answer was Cat","Incorrect!",JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_jButtonCorrectActionPerformed
+
+    private void jButtonPlayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPlayActionPerformed
+        sound.loop();
+    }//GEN-LAST:event_jButtonPlayActionPerformed
+
+    private void jButtonStopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonStopActionPerformed
+        sound.stop();
+    }//GEN-LAST:event_jButtonStopActionPerformed
 
     /**
      * @param args the command line arguments

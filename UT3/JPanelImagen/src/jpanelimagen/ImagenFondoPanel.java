@@ -12,8 +12,7 @@ import javax.swing.JFileChooser;
  *
  * @author Tarde
  */
-public class ImagenFondoPanel extends javax.swing.JPanel {
-
+public class ImagenFondoPanel extends javax.swing.JPanel{
     /**
      * Creates new form ImagenFondoPanel
      */
@@ -35,6 +34,8 @@ public class ImagenFondoPanel extends javax.swing.JPanel {
         jButtonAbrirRuta = new javax.swing.JButton();
         jLabelOpacidad = new javax.swing.JLabel();
         jSliderOpacidad = new javax.swing.JSlider();
+        jLabelSaturacion = new javax.swing.JLabel();
+        jSliderSaturacion = new javax.swing.JSlider();
 
         jLabelImagen.setText("Imagen:");
 
@@ -49,23 +50,34 @@ public class ImagenFondoPanel extends javax.swing.JPanel {
 
         jLabelOpacidad.setText("Opacidad");
 
+        jLabelSaturacion.setText("Saturación:");
+
+        jSliderSaturacion.setMaximum(200);
+        jSliderSaturacion.setValue(100);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(34, 34, 34)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabelOpacidad)
+                        .addComponent(jLabelSaturacion)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jSliderSaturacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabelOpacidad)
+                                .addGap(18, 18, 18)
+                                .addComponent(jSliderOpacidad, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabelImagen)
+                                .addGap(28, 28, 28)
+                                .addComponent(jTextFieldRuta, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(18, 18, 18)
-                        .addComponent(jSliderOpacidad, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabelImagen)
-                        .addGap(28, 28, 28)
-                        .addComponent(jTextFieldRuta, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addComponent(jButtonAbrirRuta, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButtonAbrirRuta, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(27, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -80,7 +92,11 @@ public class ImagenFondoPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabelOpacidad)
                     .addComponent(jSliderOpacidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(164, Short.MAX_VALUE))
+                .addGap(59, 59, 59)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabelSaturacion)
+                    .addComponent(jSliderSaturacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(79, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -95,14 +111,17 @@ public class ImagenFondoPanel extends javax.swing.JPanel {
     public ImagenFondo getSelectedValue(){
         File file=new File(jTextFieldRuta.getText());
         float opacidad=jSliderOpacidad.getValue()/100f; //La opacidad va de 0 a 1 y el Slider de 0 a 100
-        return new ImagenFondo(file,opacidad);
+        float saturacion=jSliderSaturacion.getValue()/100f; //La saturacion va de 0 a 2 y el Slider de 0 a 200
+        return new ImagenFondo(file,opacidad,saturacion);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonAbrirRuta;
     private javax.swing.JLabel jLabelImagen;
     private javax.swing.JLabel jLabelOpacidad;
+    private javax.swing.JLabel jLabelSaturacion;
     private javax.swing.JSlider jSliderOpacidad;
+    private javax.swing.JSlider jSliderSaturacion;
     private javax.swing.JTextField jTextFieldRuta;
     // End of variables declaration//GEN-END:variables
 }
