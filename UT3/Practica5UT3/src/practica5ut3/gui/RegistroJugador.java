@@ -43,7 +43,7 @@ public class RegistroJugador extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        jPanelImagenFondo.setImagenFondo(new jpanelimagen.ImagenFondo(new java.io.File("C:/Users/Usuario/Documents/DAM/DAM2/DIDAM2/UT3/Practica5UT3/src/practica5ut3/imgs/FondoRegistro.png"),1.0f,1.0f));
+        jPanelImagenFondo.setImagenFondo(new jpanelimagen.ImagenFondo(new java.io.File("C:/Users/Tarde/Documents/NetBeansProjects/UT3/Practica5UT3/src/practica5ut3/imgs/FondoRegistro.png"),1.0f,1.0f));
         jPanelImagenFondo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabelNombre.setFont(new java.awt.Font("Consolas", 1, 28)); // NOI18N
@@ -81,6 +81,11 @@ public class RegistroJugador extends javax.swing.JFrame {
         jButton1.setBackground(new java.awt.Color(255, 255, 255));
         jButton1.setFont(new java.awt.Font("Consolas", 1, 24)); // NOI18N
         jButton1.setText("ENTRAR");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         jPanelImagenFondo.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, 390, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -96,6 +101,27 @@ public class RegistroJugador extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        String nombre=jTextFieldNombre.getText();
+        String nick=jTextFieldNick.getText();
+        String edadString=jTextFieldEdad.getText();
+        String password=jTextFieldPassword.getText();
+        if(!nombre.equals("") && !nick.equals("") && !edadString.equals("") && !password.equals("")){
+            if(isNumero(edadString)){
+                int edad=Integer.parseInt(edadString);
+                if(edad<18) JOptionPane.showMessageDialog(this, "Este juego es para mayores de edad","PG-18",JOptionPane.INFORMATION_MESSAGE);
+                else {
+                    JOptionPane.showMessageDialog(this, "Bienvenido, "+nick,"Bienvenido",JOptionPane.INFORMATION_MESSAGE);
+                    EleccionPersonaje p=new EleccionPersonaje();
+                    p.setVisible(true);
+                    dispose();
+                }
+            }
+            else JOptionPane.showMessageDialog(this, "La edad debe ser un número","Error edad",JOptionPane.ERROR_MESSAGE);
+        }
+        else JOptionPane.showMessageDialog(this, "Todos los campos deben estar rellenos","Error campos",JOptionPane.ERROR_MESSAGE);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     public boolean isNumero(String s){
         return s.matches("[0-9]+");

@@ -6,6 +6,7 @@
 package practica1ut4.gui;
 
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -41,8 +42,8 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jLabelEmail = new javax.swing.JLabel();
         jLabelNacionalidad = new javax.swing.JLabel();
         jLabelNoticias = new javax.swing.JLabel();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
+        jRadioButtonSi = new javax.swing.JRadioButton();
+        jRadioButtonNo = new javax.swing.JRadioButton();
         jTextFieldNombre = new javax.swing.JTextField();
         jTextFieldApellidos = new javax.swing.JTextField();
         jTextFieldNif = new javax.swing.JTextField();
@@ -57,6 +58,8 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jCheckBoxJuvenil = new javax.swing.JCheckBox();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenuArchivo = new javax.swing.JMenu();
+        jMenuItemAñadir = new javax.swing.JMenuItem();
+        jMenuItemVerTabla = new javax.swing.JMenuItem();
         jMenuAyuda = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -88,13 +91,13 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jLabelNoticias.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabelNoticias.setText("Desea recibir noticias en su correo: ");
 
-        buttonGroup1.add(jRadioButton1);
-        jRadioButton1.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        jRadioButton1.setText("Sí");
+        buttonGroup1.add(jRadioButtonSi);
+        jRadioButtonSi.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        jRadioButtonSi.setText("Sí");
 
-        buttonGroup1.add(jRadioButton2);
-        jRadioButton2.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        jRadioButton2.setText("No");
+        buttonGroup1.add(jRadioButtonNo);
+        jRadioButtonNo.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        jRadioButtonNo.setText("No");
 
         jTextFieldNombre.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
 
@@ -123,9 +126,9 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                             .addGroup(jPanelSocioLayout.createSequentialGroup()
                                 .addComponent(jLabelNoticias)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jRadioButton1)
+                                .addComponent(jRadioButtonSi)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jRadioButton2))
+                                .addComponent(jRadioButtonNo))
                             .addComponent(jLabelNombre)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelSocioLayout.createSequentialGroup()
                                 .addGroup(jPanelSocioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -169,12 +172,12 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanelSocioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelNoticias)
-                    .addComponent(jRadioButton1)
-                    .addComponent(jRadioButton2))
+                    .addComponent(jRadioButtonSi)
+                    .addComponent(jRadioButtonNo))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanelPrincipal.add(jPanelSocio, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 20, 390, 280));
+        jPanelPrincipal.add(jPanelSocio, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 20, 390, 290));
 
         jPanelSocio1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED), "Preferencias", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Verdana", 1, 18))); // NOI18N
 
@@ -213,7 +216,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 .addGroup(jPanelSocio1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jCheckBoxJuvenil)
                     .addComponent(jCheckBoxCienciaFiccion))
-                .addContainerGap(73, Short.MAX_VALUE))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
         jPanelSocio1Layout.setVerticalGroup(
             jPanelSocio1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -231,9 +234,21 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 .addContainerGap(21, Short.MAX_VALUE))
         );
 
-        jPanelPrincipal.add(jPanelSocio1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 320, -1, 120));
+        jPanelPrincipal.add(jPanelSocio1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 320, 390, 120));
 
         jMenuArchivo.setText("Archivo");
+
+        jMenuItemAñadir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/practica1ut4/imgs/nuevo.png"))); // NOI18N
+        jMenuItemAñadir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemAñadirActionPerformed(evt);
+            }
+        });
+        jMenuArchivo.add(jMenuItemAñadir);
+
+        jMenuItemVerTabla.setIcon(new javax.swing.ImageIcon(getClass().getResource("/practica1ut4/imgs/guardar.png"))); // NOI18N
+        jMenuArchivo.add(jMenuItemVerTabla);
+
         jMenuBar1.add(jMenuArchivo);
 
         jMenuAyuda.setText("Ayuda");
@@ -245,16 +260,54 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, 640, Short.MAX_VALUE)
+            .addComponent(jPanelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, 625, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 486, Short.MAX_VALUE)
+            .addComponent(jPanelPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jMenuItemAñadirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemAñadirActionPerformed
+        boolean registrar=true;
+        String nombre=jTextFieldNombre.getText();
+        String apellidos=jTextFieldApellidos.getText();
+        String nif=jTextFieldNif.getText();
+        String email=jTextFieldEmail.getText();
+        String nacionalidad=jComboBoxNacionalidad.getSelectedItem().toString();
+        String mensaje="";
+        if(containsNumber(nombre)){
+            registrar=false;
+            mensaje+="El nombre no puede contener letras\n";
+        }
+        if(containsNumber(apellidos)){
+            registrar=false;
+            mensaje+="Los apellidos no pueden contener letras\n";
+        }
+        if(!isValidDni(nif)){
+            registrar=false;
+            mensaje+="El DNI no es válido\n";
+        }
+        if(nombre.equals("") || apellidos.equals("") || nif.equals("") || email.equals("")){
+            registrar=false;
+            mensaje+="Todos los campos deben ser rellenados\n";
+        }
+        if(registrar){
+            mensaje="Usuario "+nombre+" "+apellidos+" registrado, con DNI "+nif+" y correo "+email+".\nNacionalidad: "+nacionalidad+". ";
+            if(jRadioButtonSi.isSelected())mensaje+="Se ha suscrito a las ultimas novedades";
+            JOptionPane.showMessageDialog(this,mensaje, "Usuario registrado",JOptionPane.INFORMATION_MESSAGE);
+        }
+        else JOptionPane.showMessageDialog(this,mensaje, "Error",JOptionPane.ERROR_MESSAGE);
+    }//GEN-LAST:event_jMenuItemAñadirActionPerformed
+
+    public boolean containsNumber(String s){
+        return s.matches("[0-9]+");
+    }
+    public boolean isValidDni(String s){
+        return s.matches("[0-9]{8}[A-Z]{1}");
+    }
     /**
      * @param args the command line arguments
      */
@@ -309,11 +362,13 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenuArchivo;
     private javax.swing.JMenu jMenuAyuda;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItemAñadir;
+    private javax.swing.JMenuItem jMenuItemVerTabla;
     private javax.swing.JPanel jPanelPrincipal;
     private javax.swing.JPanel jPanelSocio;
     private javax.swing.JPanel jPanelSocio1;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
+    private javax.swing.JRadioButton jRadioButtonNo;
+    private javax.swing.JRadioButton jRadioButtonSi;
     private javax.swing.JTextField jTextFieldApellidos;
     private javax.swing.JTextField jTextFieldEmail;
     private javax.swing.JTextField jTextFieldNif;
