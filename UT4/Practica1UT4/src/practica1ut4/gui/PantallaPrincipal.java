@@ -21,6 +21,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         initComponents();
         this.setIconImage(new ImageIcon(getClass().getResource("/practica1ut4/imgs/main_icon.png")).getImage());
         setLocationRelativeTo(null); //Para que aparezca en el centro de la pantalla
+        jRadioButtonSi.setSelected(true);
     }
 
     /**
@@ -49,6 +50,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jTextFieldNif = new javax.swing.JTextField();
         jTextFieldEmail = new javax.swing.JTextField();
         jComboBoxNacionalidad = new javax.swing.JComboBox<>();
+        jLabelBandera = new javax.swing.JLabel();
         jPanelSocio1 = new javax.swing.JPanel();
         jCheckBoxAventura = new javax.swing.JCheckBox();
         jCheckBoxNegra = new javax.swing.JCheckBox();
@@ -72,169 +74,96 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jPanelPrincipal.add(jLabelImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 210, 470));
 
         jPanelSocio.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED), "Socio", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Verdana", 1, 18))); // NOI18N
+        jPanelSocio.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabelNombre.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabelNombre.setText("Nombre:");
+        jPanelSocio.add(jLabelNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 39, -1, -1));
 
         jLabelApellidos.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabelApellidos.setText("Apellidos:");
+        jPanelSocio.add(jLabelApellidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 81, -1, -1));
 
         jLabelNif.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabelNif.setText("NIF:");
+        jPanelSocio.add(jLabelNif, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 123, -1, -1));
 
         jLabelEmail.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabelEmail.setText("E-mail: ");
+        jPanelSocio.add(jLabelEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 165, -1, -1));
 
         jLabelNacionalidad.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabelNacionalidad.setText("Nacionalidad:");
+        jPanelSocio.add(jLabelNacionalidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 204, -1, -1));
 
         jLabelNoticias.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabelNoticias.setText("Desea recibir noticias en su correo: ");
+        jPanelSocio.add(jLabelNoticias, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 247, -1, -1));
 
         buttonGroup1.add(jRadioButtonSi);
         jRadioButtonSi.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         jRadioButtonSi.setText("Sí");
+        jPanelSocio.add(jRadioButtonSi, new org.netbeans.lib.awtextra.AbsoluteConstraints(294, 243, -1, -1));
 
         buttonGroup1.add(jRadioButtonNo);
         jRadioButtonNo.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         jRadioButtonNo.setText("No");
+        jPanelSocio.add(jRadioButtonNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(333, 243, -1, -1));
 
         jTextFieldNombre.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        jPanelSocio.add(jTextFieldNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(119, 36, 246, -1));
 
         jTextFieldApellidos.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        jPanelSocio.add(jTextFieldApellidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(119, 78, 246, -1));
 
         jTextFieldNif.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        jPanelSocio.add(jTextFieldNif, new org.netbeans.lib.awtextra.AbsoluteConstraints(119, 120, 246, -1));
 
         jTextFieldEmail.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        jPanelSocio.add(jTextFieldEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(119, 162, 246, -1));
 
         jComboBoxNacionalidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bélgica", "Brasil", "España", "Estados Unidos" }));
         jComboBoxNacionalidad.setSelectedIndex(2);
+        jComboBoxNacionalidad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxNacionalidadActionPerformed(evt);
+            }
+        });
+        jPanelSocio.add(jComboBoxNacionalidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(124, 205, -1, -1));
 
-        javax.swing.GroupLayout jPanelSocioLayout = new javax.swing.GroupLayout(jPanelSocio);
-        jPanelSocio.setLayout(jPanelSocioLayout);
-        jPanelSocioLayout.setHorizontalGroup(
-            jPanelSocioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelSocioLayout.createSequentialGroup()
-                .addGroup(jPanelSocioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelSocioLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanelSocioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanelSocioLayout.createSequentialGroup()
-                                .addComponent(jLabelNacionalidad)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jComboBoxNacionalidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanelSocioLayout.createSequentialGroup()
-                                .addComponent(jLabelNoticias)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jRadioButtonSi)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jRadioButtonNo))
-                            .addComponent(jLabelNombre)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelSocioLayout.createSequentialGroup()
-                                .addGroup(jPanelSocioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabelApellidos)
-                                    .addComponent(jLabelNif)
-                                    .addComponent(jLabelEmail))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(jPanelSocioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextFieldEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextFieldNif, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextFieldApellidos, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(13, 13, 13))))
-                    .addGroup(jPanelSocioLayout.createSequentialGroup()
-                        .addGap(120, 120, 120)
-                        .addComponent(jTextFieldNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(12, Short.MAX_VALUE))
-        );
-        jPanelSocioLayout.setVerticalGroup(
-            jPanelSocioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelSocioLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanelSocioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelNombre)
-                    .addComponent(jTextFieldNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanelSocioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelApellidos)
-                    .addComponent(jTextFieldApellidos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanelSocioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelNif)
-                    .addComponent(jTextFieldNif, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanelSocioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelEmail)
-                    .addComponent(jTextFieldEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanelSocioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelNacionalidad)
-                    .addComponent(jComboBoxNacionalidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanelSocioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelNoticias)
-                    .addComponent(jRadioButtonSi)
-                    .addComponent(jRadioButtonNo))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        jLabelBandera.setIcon(new javax.swing.ImageIcon(getClass().getResource("/practica1ut4/imgs/España.png"))); // NOI18N
+        jPanelSocio.add(jLabelBandera, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 208, 40, 20));
 
         jPanelPrincipal.add(jPanelSocio, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 20, 390, 290));
 
         jPanelSocio1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED), "Preferencias", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Verdana", 1, 18))); // NOI18N
+        jPanelSocio1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jCheckBoxAventura.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         jCheckBoxAventura.setText("Aventura");
+        jPanelSocio1.add(jCheckBoxAventura, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 32, -1, -1));
 
         jCheckBoxNegra.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         jCheckBoxNegra.setText("Negra");
+        jPanelSocio1.add(jCheckBoxNegra, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 62, -1, -1));
 
         jCheckBoxFantastica.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         jCheckBoxFantastica.setText("Fantástica");
+        jPanelSocio1.add(jCheckBoxFantastica, new org.netbeans.lib.awtextra.AbsoluteConstraints(119, 32, -1, -1));
 
         jCheckBoxHistorica.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         jCheckBoxHistorica.setText("Histórica");
+        jPanelSocio1.add(jCheckBoxHistorica, new org.netbeans.lib.awtextra.AbsoluteConstraints(119, 62, -1, -1));
 
         jCheckBoxCienciaFiccion.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         jCheckBoxCienciaFiccion.setText("Ciencia ficción");
+        jPanelSocio1.add(jCheckBoxCienciaFiccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(234, 32, -1, -1));
 
         jCheckBoxJuvenil.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         jCheckBoxJuvenil.setText("Juvenil");
+        jPanelSocio1.add(jCheckBoxJuvenil, new org.netbeans.lib.awtextra.AbsoluteConstraints(234, 62, -1, -1));
 
-        javax.swing.GroupLayout jPanelSocio1Layout = new javax.swing.GroupLayout(jPanelSocio1);
-        jPanelSocio1.setLayout(jPanelSocio1Layout);
-        jPanelSocio1Layout.setHorizontalGroup(
-            jPanelSocio1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelSocio1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanelSocio1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jCheckBoxAventura)
-                    .addComponent(jCheckBoxNegra))
-                .addGap(18, 18, 18)
-                .addGroup(jPanelSocio1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jCheckBoxFantastica)
-                    .addComponent(jCheckBoxHistorica))
-                .addGap(18, 18, 18)
-                .addGroup(jPanelSocio1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jCheckBoxJuvenil)
-                    .addComponent(jCheckBoxCienciaFiccion))
-                .addContainerGap(29, Short.MAX_VALUE))
-        );
-        jPanelSocio1Layout.setVerticalGroup(
-            jPanelSocio1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelSocio1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanelSocio1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBoxAventura)
-                    .addComponent(jCheckBoxFantastica)
-                    .addComponent(jCheckBoxCienciaFiccion))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanelSocio1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBoxNegra)
-                    .addComponent(jCheckBoxHistorica)
-                    .addComponent(jCheckBoxJuvenil))
-                .addContainerGap(21, Short.MAX_VALUE))
-        );
-
-        jPanelPrincipal.add(jPanelSocio1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 320, 390, 120));
+        jPanelPrincipal.add(jPanelSocio1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 330, 390, 120));
 
         jMenuArchivo.setText("Archivo");
 
@@ -252,6 +181,11 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jMenuBar1.add(jMenuArchivo);
 
         jMenuAyuda.setText("Ayuda");
+        jMenuAyuda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuAyudaActionPerformed(evt);
+            }
+        });
         jMenuBar1.add(jMenuAyuda);
 
         setJMenuBar(jMenuBar1);
@@ -278,35 +212,62 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         String email=jTextFieldEmail.getText();
         String nacionalidad=jComboBoxNacionalidad.getSelectedItem().toString();
         String mensaje="";
-        if(containsNumber(nombre)){
-            registrar=false;
-            mensaje+="El nombre no puede contener letras\n";
-        }
-        if(containsNumber(apellidos)){
-            registrar=false;
-            mensaje+="Los apellidos no pueden contener letras\n";
-        }
-        if(!isValidDni(nif)){
-            registrar=false;
-            mensaje+="El DNI no es válido\n";
-        }
         if(nombre.equals("") || apellidos.equals("") || nif.equals("") || email.equals("")){
             registrar=false;
             mensaje+="Todos los campos deben ser rellenados\n";
         }
+        else{
+            if(containsNumber(nombre)){
+                registrar=false;
+                mensaje+="El nombre no puede contener numeros\n";
+            }
+            if(containsNumber(apellidos)){
+                registrar=false;
+                mensaje+="Los apellidos no pueden contener numeros\n";
+            }
+            if(!isValidDni(nif)){
+                registrar=false;
+                mensaje+="El DNI no es válido\n";
+            }
+        }
+        
         if(registrar){
             mensaje="Usuario "+nombre+" "+apellidos+" registrado, con DNI "+nif+" y correo "+email+".\nNacionalidad: "+nacionalidad+". ";
             if(jRadioButtonSi.isSelected())mensaje+="Se ha suscrito a las ultimas novedades";
             JOptionPane.showMessageDialog(this,mensaje, "Usuario registrado",JOptionPane.INFORMATION_MESSAGE);
+            vaciarCampos();//Vaciamos los campos
+            
         }
         else JOptionPane.showMessageDialog(this,mensaje, "Error",JOptionPane.ERROR_MESSAGE);
     }//GEN-LAST:event_jMenuItemAñadirActionPerformed
 
+    private void jComboBoxNacionalidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxNacionalidadActionPerformed
+        jLabelBandera.setIcon(new ImageIcon(getClass().getResource("/practica1ut4/imgs/"+jComboBoxNacionalidad.getSelectedItem()+".png")));
+    }//GEN-LAST:event_jComboBoxNacionalidadActionPerformed
+
+    private void jMenuAyudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuAyudaActionPerformed
+        JOptionPane.showMessageDialog(this,"Pulse Archivo para desplegar las opciones. Pulse el primer icono para añadir un usuario\nPulse el segundo icono para ver la tabla de socios","Ayuda",JOptionPane.INFORMATION_MESSAGE);
+    }//GEN-LAST:event_jMenuAyudaActionPerformed
+
     public boolean containsNumber(String s){
-        return s.matches("[0-9]+");
+        return s.matches(".*\\d+.*");
     }
     public boolean isValidDni(String s){
         return s.matches("[0-9]{8}[A-Z]{1}");
+    }
+    public void vaciarCampos(){
+        jTextFieldNombre.setText("");
+            jTextFieldApellidos.setText("");
+            jTextFieldNif.setText("");
+            jTextFieldEmail.setText("");
+            jComboBoxNacionalidad.setSelectedIndex(3);
+            jRadioButtonSi.setSelected(true);
+            jCheckBoxAventura.setSelected(false);
+            jCheckBoxCienciaFiccion.setSelected(false);
+            jCheckBoxFantastica.setSelected(false);
+            jCheckBoxHistorica.setSelected(false);
+            jCheckBoxJuvenil.setSelected(false);
+            jCheckBoxNegra.setSelected(false);
     }
     /**
      * @param args the command line arguments
@@ -353,6 +314,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JCheckBox jCheckBoxNegra;
     private javax.swing.JComboBox<String> jComboBoxNacionalidad;
     private javax.swing.JLabel jLabelApellidos;
+    private javax.swing.JLabel jLabelBandera;
     private javax.swing.JLabel jLabelEmail;
     private javax.swing.JLabel jLabelImagen;
     private javax.swing.JLabel jLabelNacionalidad;
