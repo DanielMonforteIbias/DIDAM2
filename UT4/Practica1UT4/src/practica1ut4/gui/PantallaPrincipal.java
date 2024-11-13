@@ -5,8 +5,11 @@
  */
 package practica1ut4.gui;
 
+import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import practica1ut4.logica.ListaSocios;
+import practica1ut4.logica.Socio;
 
 /**
  *
@@ -63,6 +66,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jMenuItemAñadir = new javax.swing.JMenuItem();
         jMenuItemVerTabla = new javax.swing.JMenuItem();
         jMenuAyuda = new javax.swing.JMenu();
+        jMenuItemInstrucciones = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -71,7 +75,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         jLabelImagen.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelImagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/practica1ut4/imgs/foto.png"))); // NOI18N
-        jPanelPrincipal.add(jLabelImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 210, 470));
+        jPanelPrincipal.add(jLabelImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 210, 460));
 
         jPanelSocio.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED), "Socio", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Verdana", 1, 18))); // NOI18N
         jPanelSocio.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -132,7 +136,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jPanelSocio.add(jComboBoxNacionalidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(124, 205, -1, -1));
 
         jLabelBandera.setIcon(new javax.swing.ImageIcon(getClass().getResource("/practica1ut4/imgs/España.png"))); // NOI18N
-        jPanelSocio.add(jLabelBandera, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 208, 40, 20));
+        jPanelSocio.add(jLabelBandera, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 210, 40, 20));
 
         jPanelPrincipal.add(jPanelSocio, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 20, 390, 290));
 
@@ -176,16 +180,26 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jMenuArchivo.add(jMenuItemAñadir);
 
         jMenuItemVerTabla.setIcon(new javax.swing.ImageIcon(getClass().getResource("/practica1ut4/imgs/guardar.png"))); // NOI18N
+        jMenuItemVerTabla.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemVerTablaActionPerformed(evt);
+            }
+        });
         jMenuArchivo.add(jMenuItemVerTabla);
 
         jMenuBar1.add(jMenuArchivo);
 
         jMenuAyuda.setText("Ayuda");
-        jMenuAyuda.addActionListener(new java.awt.event.ActionListener() {
+
+        jMenuItemInstrucciones.setText("Instrucciones");
+        jMenuItemInstrucciones.setToolTipText("");
+        jMenuItemInstrucciones.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuAyudaActionPerformed(evt);
+                jMenuItemInstruccionesActionPerformed(evt);
             }
         });
+        jMenuAyuda.add(jMenuItemInstrucciones);
+
         jMenuBar1.add(jMenuAyuda);
 
         setJMenuBar(jMenuBar1);
@@ -198,7 +212,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, 486, Short.MAX_VALUE)
         );
 
         pack();
@@ -234,6 +248,17 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         if(registrar){
             mensaje="Usuario "+nombre+" "+apellidos+" registrado, con DNI "+nif+" y correo "+email+".\nNacionalidad: "+nacionalidad+". ";
             if(jRadioButtonSi.isSelected())mensaje+="Se ha suscrito a las ultimas novedades";
+            ArrayList<String>preferencias=new ArrayList<String>();
+            //Añadimos preferencias
+            if(jCheckBoxAventura.isSelected())preferencias.add(jCheckBoxAventura.getText());
+            if(jCheckBoxCienciaFiccion.isSelected())preferencias.add(jCheckBoxCienciaFiccion.getText());
+            if(jCheckBoxFantastica.isSelected())preferencias.add(jCheckBoxFantastica.getText());
+            if(jCheckBoxHistorica.isSelected())preferencias.add(jCheckBoxHistorica.getText());
+            if(jCheckBoxJuvenil.isSelected())preferencias.add(jCheckBoxJuvenil.getText());
+            if(jCheckBoxNegra.isSelected())preferencias.add(jCheckBoxNegra.getText());
+            
+            Socio s=new Socio(nombre,apellidos,nif,email,nacionalidad,jRadioButtonSi.isSelected(),preferencias);
+            ListaSocios.añadirSocio(s);
             JOptionPane.showMessageDialog(this,mensaje, "Usuario registrado",JOptionPane.INFORMATION_MESSAGE);
             vaciarCampos();//Vaciamos los campos
             
@@ -245,9 +270,14 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jLabelBandera.setIcon(new ImageIcon(getClass().getResource("/practica1ut4/imgs/"+jComboBoxNacionalidad.getSelectedItem()+".png")));
     }//GEN-LAST:event_jComboBoxNacionalidadActionPerformed
 
-    private void jMenuAyudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuAyudaActionPerformed
-        JOptionPane.showMessageDialog(this,"Pulse Archivo para desplegar las opciones. Pulse el primer icono para añadir un usuario\nPulse el segundo icono para ver la tabla de socios","Ayuda",JOptionPane.INFORMATION_MESSAGE);
-    }//GEN-LAST:event_jMenuAyudaActionPerformed
+    private void jMenuItemVerTablaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemVerTablaActionPerformed
+        TablaSocios tablaSocios=new TablaSocios(this,true);
+        tablaSocios.setVisible(true);
+    }//GEN-LAST:event_jMenuItemVerTablaActionPerformed
+
+    private void jMenuItemInstruccionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemInstruccionesActionPerformed
+       JOptionPane.showMessageDialog(this,"Pulse Archivo para desplegar las opciones. Pulse el primer icono para añadir un usuario\nPulse el segundo icono para ver la tabla de socios","Ayuda",JOptionPane.INFORMATION_MESSAGE);
+    }//GEN-LAST:event_jMenuItemInstruccionesActionPerformed
 
     public boolean containsNumber(String s){
         return s.matches(".*\\d+.*");
@@ -260,7 +290,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
             jTextFieldApellidos.setText("");
             jTextFieldNif.setText("");
             jTextFieldEmail.setText("");
-            jComboBoxNacionalidad.setSelectedIndex(3);
+            jComboBoxNacionalidad.setSelectedIndex(2);
             jRadioButtonSi.setSelected(true);
             jCheckBoxAventura.setSelected(false);
             jCheckBoxCienciaFiccion.setSelected(false);
@@ -325,6 +355,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenuAyuda;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItemAñadir;
+    private javax.swing.JMenuItem jMenuItemInstrucciones;
     private javax.swing.JMenuItem jMenuItemVerTabla;
     private javax.swing.JPanel jPanelPrincipal;
     private javax.swing.JPanel jPanelSocio;

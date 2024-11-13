@@ -37,9 +37,11 @@ public class InicioSesion extends javax.swing.JFrame {
         jLabelPassword = new javax.swing.JLabel();
         jTextFieldUsuario = new javax.swing.JTextField();
         jPasswordFieldPassword = new javax.swing.JPasswordField();
-        jButton1 = new javax.swing.JButton();
+        jButtonIngresar = new javax.swing.JButton();
+        jLabelTitulo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jPanelPrincipal.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -57,30 +59,34 @@ public class InicioSesion extends javax.swing.JFrame {
         jPasswordFieldPassword.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
         jPanelPrincipal.add(jPasswordFieldPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, 210, -1));
 
-        jButton1.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
-        jButton1.setText("INGRESAR");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jButtonIngresar.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
+        jButtonIngresar.setText("INGRESAR");
+        jButtonIngresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jButtonIngresarActionPerformed(evt);
             }
         });
-        jPanelPrincipal.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 370, -1));
+        jPanelPrincipal.add(jButtonIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 370, -1));
+
+        jLabelTitulo.setFont(new java.awt.Font("Verdana", 1, 32)); // NOI18N
+        jLabelTitulo.setText("BIBLIOTECA RIBERA");
+        jPanelPrincipal.add(jLabelTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, 469, Short.MAX_VALUE)
+            .addComponent(jPanelPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 410, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, 338, Short.MAX_VALUE)
+            .addComponent(jPanelPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jButtonIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonIngresarActionPerformed
         String usuario=jTextFieldUsuario.getText();
         char passwordArray[]=jPasswordFieldPassword.getPassword();
         String password=new String(passwordArray);
@@ -92,7 +98,7 @@ public class InicioSesion extends javax.swing.JFrame {
             dispose();
         }
         else JOptionPane.showMessageDialog(this,"Credenciales incorrectas","Error inicio sesión",JOptionPane.ERROR_MESSAGE);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_jButtonIngresarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -130,8 +136,9 @@ public class InicioSesion extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButtonIngresar;
     private javax.swing.JLabel jLabelPassword;
+    private javax.swing.JLabel jLabelTitulo;
     private javax.swing.JLabel jLabelUsuario;
     private javax.swing.JPanel jPanelPrincipal;
     private javax.swing.JPasswordField jPasswordFieldPassword;

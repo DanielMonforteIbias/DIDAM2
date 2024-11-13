@@ -5,7 +5,15 @@
  */
 package practica1ut4.gui;
 
+import java.awt.Color;
+import java.util.ArrayList;
+import java.util.Arrays;
 import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.table.DefaultTableModel;
+import practica1ut4.logica.ListaSocios;
+import practica1ut4.logica.Socio;
 
 /**
  *
@@ -19,9 +27,48 @@ public class TablaSocios extends javax.swing.JDialog {
     public TablaSocios(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         this.setIconImage(new ImageIcon(getClass().getResource("/practica1ut4/imgs/main_icon.png")).getImage()); //Icono de la ventana
+        setLocationRelativeTo(null); //Para que aparezca en el centro de la pantalla
         initComponents();
+        refrescarTabla();
     }
 
+    private void refrescarTabla(){
+        DefaultTableModel dtm=new DefaultTableModel(){
+        @Override
+        public boolean isCellEditable(int row, int column) {
+            return false; //Hacemos que las celdas no sean editables al hacer doble clic sobre ellas
+        }
+        };
+        dtm.setColumnIdentifiers(new String[]{"Nombre","Apellidos","NIF","Email","Nacionalidad","Notificaciones?","Preferencias"}); //Ponemos nombre a la columna
+        for(Socio s:ListaSocios.getListaSocios()){ //Para cada compra de la lista
+            String[]fila=new String[7]; //Creamos un Array de Strings de longitud 5
+            fila[0]=s.getNombre();
+            fila[1]=s.getApellidos();
+            fila[2]=s.getNif();
+            fila[3]=s.getEmail();
+            fila[4]=s.getNacionalidad();
+            if(s.isNotificaciones()) fila[5]="Sí";
+            else fila[5]="No";
+            fila[6]=""; //Al principio tiene un null, asi se evita
+            for(String preferencia:s.getPreferencias()){
+                fila[6]+=preferencia+" ";
+            }
+            System.out.println(Arrays.toString(fila));
+            dtm.addRow(fila); //Añadimos el array a la tabla
+        }
+        jTableSocios.setModel(dtm); //Establecemos el modelo creado como el de la tabla
+        
+        jScrollPane1.getViewport().setBackground(new Color(0xFFFFFF)); //Establecemos el color de fondo del jScrollPane que contiene la tabla
+        
+        //Apartado visual de la tabla
+        DefaultTableCellRenderer headerRenderer = new DefaultTableCellRenderer();
+        headerRenderer.setBackground(Color.BLACK); //Cambiamos el fondo del header
+        headerRenderer.setForeground(Color.WHITE); //Cambiamos el color de fuente del header
+        headerRenderer.setHorizontalAlignment(JLabel.CENTER); //Centramos el texto del header
+        for (int i = 0; i < jTableSocios.getModel().getColumnCount(); i++) { //Para cada columna
+            jTableSocios.getColumnModel().getColumn(i).setHeaderRenderer(headerRenderer); //Establecemos el header al que hemos creado
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -36,26 +83,27 @@ public class TablaSocios extends javax.swing.JDialog {
         jTableSocios = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTableSocios.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Nombre", "Apellidos", "NIF", "Email", "Nacionalidad", "Notificaciones?", "Preferencias"
             }
         ));
         jScrollPane1.setViewportView(jTableSocios);
 
-        jPanel.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 585, 320));
+        jPanel.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 940, 300));
 
-        getContentPane().add(jPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 625, 512));
+        getContentPane().add(jPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 940, 300));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
