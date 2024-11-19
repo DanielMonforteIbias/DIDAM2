@@ -169,7 +169,7 @@ public class EleccionPersonaje extends javax.swing.JFrame {
 
         jPanelImagenPersonaje6.setBackground(new java.awt.Color(0, 0, 0));
         jPanelImagenPersonaje6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 5));
-        jPanelImagenPersonaje6.setImagenFondo(new jpanelimagen.ImagenFondo(new java.io.File("C:/Program Files/NetBeans 8.2"),0.5f,1.0f));
+        jPanelImagenPersonaje6.setImagenFondo(new jpanelimagen.ImagenFondo(new java.io.File("C:/Users/Tarde/Documents/NetBeansProjects/UT3/Practica5UT3/src/practica5ut3/imgs/Personajes/Gigas.png"),1.0f,1.0f));
         jPanelImagenPersonaje6.setPreferredSize(new java.awt.Dimension(100, 150));
         jPanelImagenPersonaje6.setSize(new java.awt.Dimension(100, 150));
 

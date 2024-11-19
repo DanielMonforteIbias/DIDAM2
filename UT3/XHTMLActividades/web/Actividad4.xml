@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<factura>
+    <numero></numero>
+    <fecha></fecha>
+    <nombre></nombre>
+    <cliente>
+        <telefono></telefono>
+        <direccion></direccion>
+    </cliente>
+    <concepto></concepto>
+    <total></total>
+</factura>
