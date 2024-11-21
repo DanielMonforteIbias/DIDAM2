@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<capitales>
+    <capital>
+        <nombre>Pekín</nombre>
+        <pais>China</pais>
+    </capital>
+    <capital>
+        <nombre>Roma</nombre>
+        <pais>Italia</pais>
+    </capital>
+    <capital>
+        <nombre>Lisboa</nombre>
+        <pais>Portugal</pais>
+    </capital>
+    <capital>
+        <nombre>Lima</nombre>
+        <pais>Perú</pais>
+    </capital>
+</capitales>
