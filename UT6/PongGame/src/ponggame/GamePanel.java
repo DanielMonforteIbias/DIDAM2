@@ -7,11 +7,14 @@ package ponggame;
 
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.io.File;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
 /**
@@ -20,12 +23,14 @@ import javax.swing.JPanel;
  */
 public class GamePanel extends JPanel implements Runnable, KeyListener{
     private final int WIDTH=800, HEIGHT=600;
+    public static int puntosJ1,puntosJ2;
     private Thread gameThread;
     private boolean running;
     private final Ball ball;
     private final Paddle player1;
     private final Paddle player2;
     
+    private File rutaFondo=new File("src/imgs/Background.png");
     public GamePanel(){
         setPreferredSize(new Dimension(WIDTH,HEIGHT));
         setBackground(Color.BLACK);
@@ -67,6 +72,13 @@ public class GamePanel extends JPanel implements Runnable, KeyListener{
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
+        //Importante dibujar el fondo antes que el resto
+        ImageIcon background=new ImageIcon(rutaFondo.getAbsolutePath());
+        g.drawImage(background.getImage(),0,0,null);
+        g.setColor(Color.WHITE);
+        g.setFont(new Font("Arial", Font.BOLD, 30)); 
+        g.drawString(puntosJ1+"", WIDTH/2-50,25);
+        g.drawString(puntosJ2+"", WIDTH/2+50,25);
         ball.draw(g);
         player1.draw(g);
         player2.draw(g);

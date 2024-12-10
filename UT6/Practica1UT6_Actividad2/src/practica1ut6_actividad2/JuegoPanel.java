@@ -21,6 +21,7 @@ import javax.swing.Timer;
 public class JuegoPanel extends JPanel implements ActionListener{
     private Timer timer;
     private int x,y,velX,velY;
+    private int characterWidth=30, characterHeight=30;
     public JuegoPanel(){
         setBackground(Color.BLACK);
         setFocusable(true);
@@ -37,7 +38,7 @@ public class JuegoPanel extends JPanel implements ActionListener{
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         g.setColor(Color.red);
-        g.fillRect(x,y,30,30);
+        g.fillRect(x,y,characterWidth,characterHeight);
     }
     
     @Override
@@ -48,6 +49,10 @@ public class JuegoPanel extends JPanel implements ActionListener{
     private void mover(){
         x+=velX;
         y+=velY;
+        if(x<0)x=0;
+        if(y<0)y=0;
+        if(y+characterHeight>this.getHeight())y=this.getHeight()-characterHeight;
+        if(x+characterWidth>this.getWidth())x=this.getWidth()-characterWidth;
     }
     private class TAdapter extends KeyAdapter{
         @Override

@@ -10,6 +10,7 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
+import static practica1ut6_actividad1.Bingo.tarjeta;
 
 /**
  *
@@ -74,8 +75,8 @@ public class Juego extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanelTarjeta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanelTarjeta, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButtonGenerarAleatorio, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabelNumeroActual)
@@ -85,6 +86,7 @@ public class Juego extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
     private void crearTablero(){
+        JButton boton=new JButton();
         for(int i=0;i<Bingo.tarjeta.length;i++){
             for(int j=0;j<Bingo.tarjeta[0].length;j++){
                 jPanelTarjeta.add(new JButton(Bingo.tarjeta[i][j]+""));
@@ -95,12 +97,24 @@ public class Juego extends javax.swing.JFrame {
         int aleatorio=(int)(Math.random()*75+1);
         jLabelNumeroActual.setText("NÚMERO ACTUAL: "+aleatorio);
         if(Bingo.buscarNumero(aleatorio)){
-            System.out.println("ESTA");
+            JButton boton=buscarBoton(aleatorio); //Obtenemos el boton que corresponde al numero acertado
+            boton.setBackground(Color.GREEN);
             comprobarVictoria();
         }
     }//GEN-LAST:event_jButtonGenerarAleatorioActionPerformed
     private boolean comprobarVictoria(){
         return false;
+    }
+    
+    private JButton buscarBoton(int aleatorio){
+        for(int i=0;i<tarjeta.length;i++){
+            for(int j=0;j<tarjeta[0].length;j++){
+                if(tarjeta[i][j]==aleatorio) {
+                    return (JButton)jPanelTarjeta.getComponent((tarjeta.length*i)+j);
+                }
+            }
+        }
+        return new JButton();
     }
     /**
      * @param args the command line arguments

@@ -31,7 +31,7 @@ public class Paddle {
         this.direction=direction;
     }
     public void draw(Graphics g){
-        g.setColor(Color.WHITE);
+        g.setColor(Color.RED);
         g.fillRect(x,y,width,height);
     }
     public int getX(){
@@ -46,4 +46,13 @@ public class Paddle {
     public int getHeight(){
         return height;
     }
+
+    public void setWidth(int width) {
+        this.width = width;
+    }
+
+    public void setHeight(int height) {
+        this.height = height;
+    }
+    
 }
