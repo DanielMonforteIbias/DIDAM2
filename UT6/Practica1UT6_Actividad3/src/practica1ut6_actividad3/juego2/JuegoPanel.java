@@ -9,22 +9,55 @@ import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.geom.Line2D;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
 
 /**
  *
  * @author Tarde
  */
 public class JuegoPanel extends javax.swing.JPanel {
-    private int grosor=15;
-    public static Color color=Color.RED;
+    private int turno=1;
+    private ActionListener listener;
     /**
      * Creates new form JuegoPanel
      */
     public JuegoPanel() {
         initComponents();
+        listener=new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JButton boton=(JButton)e.getSource();
+                if(boton.getIcon()==null){ //Si aun no se ha pulsado
+                    if(turno==1){
+                    boton.setIcon(new ImageIcon(getClass().getResource("/imgs/cruz.png")));
+                    turno=2;
+                }
+                else if(turno==2){
+                    boton.setIcon(new ImageIcon(getClass().getResource("/imgs/circulo.png")));
+                    turno=1;
+                }
+                }
+            }
+        };
+        añadirListenerABotones();
     }
 
+    private void añadirListenerABotones(){
+        jButton1.addActionListener(listener);
+        jButton2.addActionListener(listener);
+        jButton3.addActionListener(listener);
+        jButton4.addActionListener(listener);
+        jButton5.addActionListener(listener);
+        jButton6.addActionListener(listener);
+        jButton7.addActionListener(listener);
+        jButton8.addActionListener(listener);
+        jButton9.addActionListener(listener);
+        
+    }
     @Override
     protected void paintComponent(Graphics g) {
         pintarTablero(g);
@@ -50,32 +83,39 @@ public class JuegoPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
+        jButton9 = new javax.swing.JButton();
+
         setBackground(new java.awt.Color(255, 255, 255));
-        addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseDragged(java.awt.event.MouseEvent evt) {
-                formMouseDragged(evt);
-            }
-        });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        setLayout(new java.awt.GridLayout(3, 3));
+        add(jButton1);
+        add(jButton2);
+        add(jButton3);
+        add(jButton4);
+        add(jButton5);
+        add(jButton6);
+        add(jButton7);
+        add(jButton8);
+        add(jButton9);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void formMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseDragged
-        Graphics g=getGraphics(); //Importante obtener los graficos del área de dibujo y no de la ventana
-        g.setColor(color); //Pintaremos de color negro
-        g.fillOval(evt.getX(),evt.getY(),grosor,grosor); 
-    }//GEN-LAST:event_formMouseDragged
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
     // End of variables declaration//GEN-END:variables
 }

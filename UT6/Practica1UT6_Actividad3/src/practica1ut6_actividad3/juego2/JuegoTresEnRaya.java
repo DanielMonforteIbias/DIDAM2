@@ -30,72 +30,24 @@ public class JuegoTresEnRaya extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        juegoPanel = new practica1ut6_actividad3.juego2.JuegoPanel();
-        jButtonCambiarTurno = new javax.swing.JButton();
-        jLabelTurno = new javax.swing.JLabel();
+        juegoPanel1 = new practica1ut6_actividad3.juego2.JuegoPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
-
-        javax.swing.GroupLayout juegoPanelLayout = new javax.swing.GroupLayout(juegoPanel);
-        juegoPanel.setLayout(juegoPanelLayout);
-        juegoPanelLayout.setHorizontalGroup(
-            juegoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        juegoPanelLayout.setVerticalGroup(
-            juegoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
-
-        jButtonCambiarTurno.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButtonCambiarTurno.setText("CAMBIAR TURNO");
-        jButtonCambiarTurno.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonCambiarTurnoActionPerformed(evt);
-            }
-        });
-
-        jLabelTurno.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabelTurno.setText("TURNO JUGADOR 1");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(juegoPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButtonCambiarTurno, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
-                .addComponent(jLabelTurno)
-                .addGap(25, 25, 25))
+            .addComponent(juegoPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 363, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(juegoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonCambiarTurno, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelTurno))
-                .addGap(0, 11, Short.MAX_VALUE))
+            .addComponent(juegoPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButtonCambiarTurnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCambiarTurnoActionPerformed
-        if(turno==1){
-            turno=2;
-            JuegoPanel.color=Color.BLUE;
-        }
-        else if (turno==2){
-            turno=1;
-            JuegoPanel.color=Color.RED;
-        }
-        jLabelTurno.setText("TURNO JUGADOR "+turno);
-    }//GEN-LAST:event_jButtonCambiarTurnoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -133,8 +85,6 @@ public class JuegoTresEnRaya extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonCambiarTurno;
-    private javax.swing.JLabel jLabelTurno;
-    private practica1ut6_actividad3.juego2.JuegoPanel juegoPanel;
+    private practica1ut6_actividad3.juego2.JuegoPanel juegoPanel1;
     // End of variables declaration//GEN-END:variables
 }

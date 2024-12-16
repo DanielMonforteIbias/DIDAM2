@@ -11,6 +11,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.io.File;
+import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
@@ -21,7 +23,9 @@ import javax.swing.Timer;
 public class JuegoPanel extends JPanel implements ActionListener{
     private Timer timer;
     private int x,y,velX,velY;
-    private int characterWidth=30, characterHeight=30;
+    private int characterWidth, characterHeight;
+    private ImageIcon personaje=new ImageIcon(new File("src/imgs/nave.png").getAbsolutePath());
+    private ImageIcon fondo=new ImageIcon(new File("src/imgs/background.png").getAbsolutePath());
     public JuegoPanel(){
         setBackground(Color.BLACK);
         setFocusable(true);
@@ -30,6 +34,8 @@ public class JuegoPanel extends JPanel implements ActionListener{
         y=50;
         velX=0;
         velY=0;
+        characterWidth=personaje.getIconWidth();
+        characterHeight=personaje.getIconHeight();
         timer=new Timer(10,this);
         timer.start();
     }
@@ -37,8 +43,10 @@ public class JuegoPanel extends JPanel implements ActionListener{
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-        g.setColor(Color.red);
-        g.fillRect(x,y,characterWidth,characterHeight);
+        g.drawImage(fondo.getImage(),0,0,null);
+        //g.setColor(Color.red);
+        //g.fillRect(x,y,characterWidth,characterHeight);
+        g.drawImage(personaje.getImage(),x,y,null);
     }
     
     @Override
