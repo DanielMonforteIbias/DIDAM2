@@ -8,6 +8,7 @@ package practica1ut6_actividad1;
 import java.awt.Color;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import static practica1ut6_actividad1.Bingo.tarjeta;
@@ -27,7 +28,7 @@ public class Juego extends javax.swing.JFrame {
         Bingo.rellenarTarjeta();
         crearTablero();
     }
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -40,6 +41,7 @@ public class Juego extends javax.swing.JFrame {
         jButtonGenerarAleatorio = new javax.swing.JButton();
         jLabelNumeroActual = new javax.swing.JLabel();
         jPanelTarjeta = new javax.swing.JPanel();
+        jLabelResultado = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -57,17 +59,22 @@ public class Juego extends javax.swing.JFrame {
 
         jPanelTarjeta.setLayout(new java.awt.GridLayout(5, 5));
 
+        jLabelResultado.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(100, Short.MAX_VALUE)
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 90, Short.MAX_VALUE)
                         .addComponent(jButtonGenerarAleatorio)
                         .addGap(95, 95, 95))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabelResultado)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabelNumeroActual)
                         .addGap(157, 157, 157))))
             .addComponent(jPanelTarjeta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -77,45 +84,62 @@ public class Juego extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanelTarjeta, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButtonGenerarAleatorio, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabelNumeroActual)
-                .addGap(15, 15, 15))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jButtonGenerarAleatorio, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabelNumeroActual)
+                        .addGap(15, 15, 15))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabelResultado)
+                        .addContainerGap())))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    private void crearTablero(){
-        JButton boton=new JButton();
-        for(int i=0;i<Bingo.tarjeta.length;i++){
-            for(int j=0;j<Bingo.tarjeta[0].length;j++){
-                jPanelTarjeta.add(new JButton(Bingo.tarjeta[i][j]+""));
+    private void crearTablero() {
+        JButton boton = new JButton();
+        for (int i = 0; i < Bingo.tarjeta.length; i++) {
+            for (int j = 0; j < Bingo.tarjeta[0].length; j++) {
+                jPanelTarjeta.add(new JButton(Bingo.tarjeta[i][j].getValor()+""));
             }
         }
     }
     private void jButtonGenerarAleatorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGenerarAleatorioActionPerformed
-        int aleatorio=(int)(Math.random()*75+1);
-        jLabelNumeroActual.setText("NÚMERO ACTUAL: "+aleatorio);
-        if(Bingo.buscarNumero(aleatorio)){
-            JButton boton=buscarBoton(aleatorio); //Obtenemos el boton que corresponde al numero acertado
-            boton.setBackground(Color.GREEN);
-            comprobarVictoria();
-        }
+        int aleatorio = (int) (Math.random() * 75 + 1);
+        jLabelNumeroActual.setText("NÚMERO ACTUAL: " + aleatorio);
+        actualizarEstado(aleatorio);
     }//GEN-LAST:event_jButtonGenerarAleatorioActionPerformed
-    private boolean comprobarVictoria(){
-        return false;
-    }
-    
-    private JButton buscarBoton(int aleatorio){
-        for(int i=0;i<tarjeta.length;i++){
-            for(int j=0;j<tarjeta[0].length;j++){
-                if(tarjeta[i][j]==aleatorio) {
-                    return (JButton)jPanelTarjeta.getComponent((tarjeta.length*i)+j);
+
+    private boolean comprobarVictoria() {
+        for (int i = 0; i < tarjeta.length; i++) {
+            for (int j = 0; j < tarjeta[0].length; j++) {
+                if (!tarjeta[i][j].isDescubierta()) {
+                    return false;
                 }
             }
         }
-        return new JButton();
+        return true;
     }
+
+    private void actualizarEstado(int aleatorio) {
+        for (int i = 0; i < tarjeta.length; i++) {
+            for (int j = 0; j < tarjeta[0].length; j++) {
+                if (tarjeta[i][j].getValor() == aleatorio) {
+                    tarjeta[i][j].setDescubierta(true);
+                    JButton boton = (JButton) jPanelTarjeta.getComponent((tarjeta.length * i) + j);
+                    boton.setBackground(Color.GREEN);
+                    if (comprobarVictoria()) {
+                        JOptionPane.showMessageDialog(this, "Has ganado!", "VICTORIA", JOptionPane.INFORMATION_MESSAGE);
+                        jLabelResultado.setText("Victoria!");
+                        jButtonGenerarAleatorio.setEnabled(false);
+                    }
+                    return; //Paramos la ejecucion del metodo para no perder tiempo recorriendo el for, ya que solo hay una casilla con ese numero
+                }
+            }
+        }
+    }
+
     /**
      * @param args the command line arguments
      */
@@ -154,6 +178,7 @@ public class Juego extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonGenerarAleatorio;
     private javax.swing.JLabel jLabelNumeroActual;
+    private javax.swing.JLabel jLabelResultado;
     private javax.swing.JPanel jPanelTarjeta;
     // End of variables declaration//GEN-END:variables
 }

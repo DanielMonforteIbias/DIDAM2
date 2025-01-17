@@ -10,9 +10,17 @@ package practica1ut6_actividad1;
  * @author Tarde
  */
 public class Bingo {
-    public static int tarjeta[][]=new int[5][5];
+    public static Casilla tarjeta[][]=new Casilla[5][5];
     
+    public static void inicializarTarjeta(){
+        for(int i=0;i<tarjeta.length;i++){
+            for(int j=0;j<tarjeta[0].length;j++){
+                tarjeta[i][j]=new Casilla();
+            }
+        }
+    }
     public static void rellenarTarjeta(){
+        inicializarTarjeta();
         int aleatorio=0;
         boolean repetido=false;
         for(int i=0;i<tarjeta.length;i++){
@@ -20,7 +28,7 @@ public class Bingo {
                 do{
                     repetido=false;
                     aleatorio=(int)((Math.random()*75+1));
-                    if(!buscarNumero(aleatorio))tarjeta[i][j]=aleatorio;
+                    if(!buscarNumero(aleatorio))tarjeta[i][j]=new Casilla(aleatorio);
                     else repetido=true; 
                 }while(repetido);
             }
@@ -29,7 +37,7 @@ public class Bingo {
     public static boolean buscarNumero(int n){
         for(int i=0;i<tarjeta.length;i++){
             for(int j=0;j<tarjeta[0].length;j++){
-                if(tarjeta[i][j]==n) return true;
+                if((tarjeta[i][j].getValor())==n) return true;
             }
         }
         return false;
