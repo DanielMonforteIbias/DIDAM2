@@ -19,6 +19,8 @@ import static practica1ut6_actividad1.Bingo.tarjeta;
  */
 public class Juego extends javax.swing.JFrame {
 
+    private int numerosSacados[]=new int[75];
+    private int contadorNumeros=0;
     /**
      * Creates new form Juego
      */
@@ -28,7 +30,7 @@ public class Juego extends javax.swing.JFrame {
         Bingo.rellenarTarjeta();
         crearTablero();
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -106,11 +108,29 @@ public class Juego extends javax.swing.JFrame {
         }
     }
     private void jButtonGenerarAleatorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGenerarAleatorioActionPerformed
-        int aleatorio = (int) (Math.random() * 75 + 1);
+        int aleatorio=0;
+        boolean valido=true;
+        do{
+            aleatorio= (int) (Math.random() * 75 + 1);
+            if(numeroYaSacado(aleatorio)){
+                valido=false;
+            }
+            else{
+                valido=true;
+                numerosSacados[contadorNumeros]=aleatorio;
+                contadorNumeros++;
+            }
+        }while(!valido);
         jLabelNumeroActual.setText("NÚMERO ACTUAL: " + aleatorio);
         actualizarEstado(aleatorio);
     }//GEN-LAST:event_jButtonGenerarAleatorioActionPerformed
 
+    private boolean numeroYaSacado(int n){
+        for(int i=0;i<contadorNumeros;i++){
+            if(numerosSacados[i]==n) return true;
+        }
+        return false;
+    }
     private boolean comprobarVictoria() {
         for (int i = 0; i < tarjeta.length; i++) {
             for (int j = 0; j < tarjeta[0].length; j++) {
@@ -129,6 +149,7 @@ public class Juego extends javax.swing.JFrame {
                     tarjeta[i][j].setDescubierta(true);
                     JButton boton = (JButton) jPanelTarjeta.getComponent((tarjeta.length * i) + j);
                     boton.setBackground(Color.GREEN);
+                    comprobarFilaColumnaDiagonal(i,j);
                     if (comprobarVictoria()) {
                         JOptionPane.showMessageDialog(this, "Has ganado!", "VICTORIA", JOptionPane.INFORMATION_MESSAGE);
                         jLabelResultado.setText("Victoria!");
@@ -137,6 +158,35 @@ public class Juego extends javax.swing.JFrame {
                     return; //Paramos la ejecucion del metodo para no perder tiempo recorriendo el for, ya que solo hay una casilla con ese numero
                 }
             }
+        }
+    }
+    
+    private void comprobarFilaColumnaDiagonal(int i,int j){
+        boolean fila=true, columna=true, diagonal=true, diagonal2=true;
+        //COMPROBACION FILA
+        for(int k=0;k<tarjeta.length;k++){
+            if(!tarjeta[i][k].isDescubierta()) fila=false;
+        }
+        if(fila)System.out.println("Fila "+i+" completa!");
+        //COMPROBACION COLUMNA
+        for(int k=0;k<tarjeta.length;k++){
+            if(!tarjeta[k][j].isDescubierta()) columna=false;
+        }
+        if(columna)System.out.println("Columna "+j+" completa!");
+        
+        //COMPROBACION DIAGONAL PRINCIPAL
+        if(i==j){ //Los elementos de la diagonal principal tienen i y j iguales
+            for(int k=0;k<tarjeta.length;k++){
+                if(!tarjeta[k][k].isDescubierta()) diagonal=false;
+            }
+            if(diagonal) System.out.println("Diagonal principal completada!");
+        }
+        //COMPROBACION DIAGONAL SECUNDARIA
+        if(i+j==tarjeta.length-1){ //Los elementos de la diagonal secundaria son los únicos que cumplen que i+j es igual al maximo valor de filas o columnas (es decir, el tamaño-1, en este caso 4)
+            for(int k=0;k<tarjeta.length;k++){
+                if(!tarjeta[k][(tarjeta.length-1)-k].isDescubierta()) diagonal2=false;
+            }
+            if(diagonal2) System.out.println("Diagonal secundaria completada!");
         }
     }
 
