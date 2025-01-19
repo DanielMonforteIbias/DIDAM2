@@ -16,7 +16,7 @@ import java.sql.SQLException;
 public class ConexionSupermercado {
     public static Connection conectar(){
         try {
-            Class.forName("com.mysql.jbdc.Driver");
+            Class.forName("com.mysql.jdbc.Driver");
             return DriverManager.getConnection("jdbc:mysql://localhost:3306/supermercado", "root", "");
         } catch (ClassNotFoundException ex) {
             return null;

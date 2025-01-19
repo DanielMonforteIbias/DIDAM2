@@ -5,12 +5,14 @@
  */
 package controller;
 
+import dao.CategoriaDao;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.Categoria;
 
 /**
  *
@@ -54,8 +56,7 @@ public class CategoriaControl extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         processRequest(request, response);
     }
 
@@ -68,9 +69,13 @@ public class CategoriaControl extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String nombre=request.getParameter("nombre");
+        Categoria cat=new Categoria();
+        cat.setNombre(nombre);
+        if(CategoriaDao.registrarCategoria(cat))request.setAttribute("mensaje", "La categoría fue registrada");
+        else request.setAttribute("mensaje", "La categoría NO fue registrada");
+        request.getRequestDispatcher("RegistroCategoria.jsp").forward(request, response);
     }
 
     /**

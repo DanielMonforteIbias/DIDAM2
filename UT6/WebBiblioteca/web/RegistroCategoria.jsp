@@ -9,14 +9,14 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Gestión de Categoría</title>
         <%@include file="CSS.jsp" %>
     </head>
     <body>
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 		<meta charset="utf-8" />
-		<title>Gestión de libros</title>
+		<title>Gestión de Categoría</title>
 
 		<meta name="description" content="Christian Gámez Udemy" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
@@ -567,19 +567,22 @@
                                                                                         <div class="form-group">
                                                                                             <label class="col-sm-3 control-label no padding-right">Código:</label>
                                                                                             <div class="col-sm-9">
-                                                                                                <input type="text" name="Código" value="" placeholder="Código de la categoría"/>
+                                                                                                <input type="text" name="codigo" value="" placeholder="Código de la categoría"/>
                                                                                             </div>
                                                                                         </div>
                                                                                         <div class="form-group">
                                                                                             <label class="col-sm-3 control-label no padding-right">Nombre:</label>
                                                                                             <div class="col-sm-9">
-                                                                                                <input type="text" name="Nombre" value="" placeholder="Nombre de la categoría"/>
+                                                                                                <input type="text" name="nombre" value="" placeholder="Nombre de la categoría"/>
                                                                                             </div>
                                                                                         </div>
                                                                                         <button class="btn btn-success" type="submit">
                                                                                             <i class="fa fa-save"></i>
                                                                                             Registrar
                                                                                         </button>
+                                                                                        <div>
+                                                                                            <%=(request.getAttribute("mensaje")!=null?request.getAttribute("mensaje"):"")%>
+                                                                                        </div>
                                                                                     </form>
                                                                                 </div>
 

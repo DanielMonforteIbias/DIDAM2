@@ -54,7 +54,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <h1>Hello World!</h1>\n");
       out.write("        ");
       if (true) {
-        _jspx_page_context.forward("listarLibros.jsp");
+        _jspx_page_context.forward("ListarLibros.jsp");
         return;
       }
       out.write("\n");

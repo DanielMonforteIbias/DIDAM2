@@ -20,24 +20,38 @@ import model.Categoria;
  */
 public class CategoriaDao {
     public static boolean registrarCategoria(Categoria cat){
+        Connection conexion=null;
+        PreparedStatement st=null;
         try {
-            String sql="INSERT INTO CATEGORIAS(nombre) VALUES('?');";
-            Connection conexion=ConexionBiblioteca.conectar();
-            PreparedStatement st=conexion.prepareStatement(sql);
+            String sql="INSERT INTO CATEGORIAS(nombre) VALUES(?);";
+            conexion=ConexionBiblioteca.conectar();
+            if(conexion==null) return false;
+            st=conexion.prepareStatement(sql);
             st.setString(1,cat.getNombre());
             if(st.executeUpdate()>0) return true;
             else return false;
         } catch (SQLException ex) {
             return false;
+        }finally{
+            try {
+                if(st!=null) st.close();
+                if(conexion!=null) conexion.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(CategoriaDao.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }
-    public static ArrayList<Categoria> listarCategorias(Categoria cat){
+    public static ArrayList<Categoria> listarCategorias(){
+        ArrayList<Categoria>categorias=new ArrayList<Categoria>();
+        Connection conexion=null;
+        PreparedStatement st=null;
+        ResultSet resultado=null;
         try {
-            ArrayList<Categoria>categorias=new ArrayList<Categoria>();
             String sql="SELECT * FROM CATEGORIAS;";
-            Connection conexion=ConexionBiblioteca.conectar();
-            PreparedStatement st=conexion.prepareStatement(sql);
-            ResultSet resultado=st.executeQuery();
+            conexion=ConexionBiblioteca.conectar();
+            if(conexion==null) return null;
+            st=conexion.prepareStatement(sql);
+            resultado=st.executeQuery();
             while(resultado.next()){
                 int codigo=resultado.getInt("codigo");
                 String nombre=resultado.getString("nombre");
@@ -46,6 +60,14 @@ public class CategoriaDao {
             return categorias;
         } catch (SQLException ex) {
             return null;
+        }finally{
+            try {
+                if(resultado!=null) resultado.close();
+                if(st!=null) st.close();
+                if(conexion!=null) conexion.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(CategoriaDao.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }
 }
