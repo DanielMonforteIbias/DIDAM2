@@ -70,4 +70,29 @@ public class CategoriaDao {
             }
         }
     }
+    public static String getCategoria(int codigo){
+        Connection conexion=null;
+        PreparedStatement st=null;
+        ResultSet resultado=null;
+        try {
+            String sql="SELECT nombre FROM CATEGORIAS WHERE codigo=?;";
+            conexion=ConexionSupermercado.conectar();
+            if(conexion==null) return null;
+            st=conexion.prepareStatement(sql);
+            st.setInt(1, codigo);
+            resultado=st.executeQuery();
+            if(resultado.next())return resultado.getString("nombre");
+            else return "--";
+        } catch (SQLException ex) {
+            return "--";
+        }finally{
+            try {
+                if(resultado!=null) resultado.close();
+                if(st!=null) st.close();
+                if(conexion!=null) conexion.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(CategoriaDao.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }
 }

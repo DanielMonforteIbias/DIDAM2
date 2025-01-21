@@ -41,7 +41,7 @@ public class ProveedorDao {
                 if(st!=null) st.close();
                 if(conexion!=null) conexion.close();
             } catch (SQLException ex) {
-                Logger.getLogger(CategoriaDao.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ProveedorDao.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
     }
@@ -61,7 +61,7 @@ public class ProveedorDao {
                 String nombre=resultado.getString("nombre");
                 String telefono=resultado.getString("telefono");
                 String direccion=resultado.getString("direccion");
-                String email=resultado.getString("email");
+                String email=resultado.getString("correo");
                 proveedores.add(new Proveedor(nit,nombre,telefono,direccion,email));
             }
             return proveedores;
@@ -73,7 +73,33 @@ public class ProveedorDao {
                 if(st!=null) st.close();
                 if(conexion!=null) conexion.close();
             } catch (SQLException ex) {
-                Logger.getLogger(CategoriaDao.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ProveedorDao.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }
+    
+    public static String getProveedor(String nit){
+        Connection conexion=null;
+        PreparedStatement st=null;
+        ResultSet resultado=null;
+        try {
+            String sql="SELECT nombre FROM PROVEEDORES WHERE nit=?;";
+            conexion=ConexionSupermercado.conectar();
+            if(conexion==null) return null;
+            st=conexion.prepareStatement(sql);
+            st.setString(1, nit);
+            resultado=st.executeQuery();
+            if(resultado.next())return resultado.getString("nombre");
+            else return "--";
+        } catch (SQLException ex) {
+            return "--";
+        }finally{
+            try {
+                if(resultado!=null) resultado.close();
+                if(st!=null) st.close();
+                if(conexion!=null) conexion.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(ProveedorDao.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
     }

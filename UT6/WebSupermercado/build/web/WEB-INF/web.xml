@@ -8,6 +8,10 @@
         <servlet-name>ProveedorControl</servlet-name>
         <servlet-class>controller.ProveedorControl</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ProductoControl</servlet-name>
+        <servlet-class>controller.ProductoControl</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>CategoriaControl</servlet-name>
         <url-pattern>/CategoriaControl</url-pattern>
@@ -15,6 +19,10 @@
     <servlet-mapping>
         <servlet-name>ProveedorControl</servlet-name>
         <url-pattern>/ProveedorControl</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProductoControl</servlet-name>
+        <url-pattern>/ProductoControl</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

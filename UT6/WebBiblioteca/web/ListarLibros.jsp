@@ -4,6 +4,10 @@
     Author     : Christian Gámez
 --%>
 
+<%@page import="dao.CategoriaDao"%>
+<%@page import="dao.EditorialDao"%>
+<%@page import="model.Libro"%>
+<%@page import="dao.LibroDao"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="es">
@@ -579,18 +583,17 @@
 												</thead>
 
 												<tbody>
-													<tr>
-
+                                                                                                    <%for(Libro lib:LibroDao.listarLibros()){%>
+                                                                                                    <tr>
 														<td>
-														<a href="#">1254-3256-9856-652</a>
+                                                                                                                    <a href="#"><%=lib.getIsbn()%></a>
 														</td>
-														<td class="hidden-480">Introducción a desarrollo web con JSP</td>
-														<td>Christian Gámez</td>
-
-														<td>2017-12-31</td>
-                                                                                                                <td><span class="label label-sm label-success">Planeta</span></td>
+														<td class="hidden-480"><%=lib.getTitulo()%></td>
+														<td><%=lib.getNombreAutor()%></td>
+														<td><%=lib.getPublicacion()%></td>
+                                                                                                                <td><span class="label label-sm label-success"><%=EditorialDao.getEditorial(lib.getNitEditorial())%></span></td>
                                                                                                                 <td>
-															<span class="label label-sm label-success">Matemáticas</span>
+															<span class="label label-sm label-success"><%=CategoriaDao.getCategoria(lib.getCodigoCategoria())%></span>
 														</td>
 
 														<td>
@@ -643,6 +646,8 @@
 															</div>
 														</td>
 													</tr>
+                                                                                                    <%}%>
+													
 
 													
 													</tbody>

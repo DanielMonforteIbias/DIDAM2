@@ -42,7 +42,7 @@ public class EditorialDao {
                 if(st!=null) st.close();
                 if(conexion!=null) conexion.close();
             } catch (SQLException ex) {
-                Logger.getLogger(CategoriaDao.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(EditorialDao.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
     }
@@ -75,7 +75,33 @@ public class EditorialDao {
                 if(st!=null) st.close();
                 if(conexion!=null) conexion.close();
             } catch (SQLException ex) {
-                Logger.getLogger(CategoriaDao.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(EditorialDao.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }
+    
+    public static String getEditorial(String nit){
+        Connection conexion=null;
+        PreparedStatement st=null;
+        ResultSet resultado=null;
+        try {
+            String sql="SELECT nombre FROM EDITORIALES WHERE nit=?;";
+            conexion=ConexionBiblioteca.conectar();
+            if(conexion==null) return null;
+            st=conexion.prepareStatement(sql);
+            st.setString(1, nit);
+            resultado=st.executeQuery();
+            if(resultado.next())return resultado.getString("nombre");
+            else return "--";
+        } catch (SQLException ex) {
+            return "--";
+        }finally{
+            try {
+                if(resultado!=null) resultado.close();
+                if(st!=null) st.close();
+                if(conexion!=null) conexion.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(EditorialDao.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
     }

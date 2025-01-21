@@ -53,7 +53,7 @@ public final class RegistroCategoria_jsp extends org.apache.jasper.runtime.HttpJ
       out.write("<html>\n");
       out.write("    <head>\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
-      out.write("        <title>JSP Page</title>\n");
+      out.write("        <title>Gestión de Categoría</title>\n");
       out.write("        ");
       out.write("<!-- bootstrap & fontawesome -->\n");
       out.write("\t\t<link rel=\"stylesheet\" href=\"assets/css/bootstrap.min.css\" />\n");
