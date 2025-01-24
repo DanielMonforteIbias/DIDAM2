@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report_profesores" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="45ae1c51-d17a-417d-867e-11a5447fc63a">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT * FROM PROFESORES ORDER BY ASIGNATURA;]]>
+	</queryString>
+	<field name="codprofesor" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombre" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="apellidos" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="asignatura" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<variable name="codprofesor_1" class="java.lang.Integer" resetType="Group" resetGroup="asignatura" calculation="Count">
+		<variableExpression><![CDATA[$F{codprofesor}]]></variableExpression>
+	</variable>
+	<group name="asignatura">
+		<groupExpression><![CDATA[$F{asignatura}]]></groupExpression>
+		<groupHeader>
+			<band height="29">
+				<textField>
+					<reportElement x="82" y="0" width="100" height="20" uuid="dbd9aa87-a3c1-47f6-b1d3-386b09eb5b81"/>
+					<textElement>
+						<font size="12" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{asignatura}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="28">
+				<textField>
+					<reportElement x="82" y="0" width="100" height="20" uuid="69693716-8359-48ca-a7f5-baea5e2692e9"/>
+					<textFieldExpression><![CDATA["TOTAL: "+$V{codprofesor_1}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="225" y="0" width="117" height="28" uuid="20a41501-4e19-4baa-b2f1-c356b7832413"/>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PROFESORES]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="37" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="28" splitType="Stretch">
+			<staticText>
+				<reportElement x="192" y="0" width="56" height="20" uuid="0ce1da20-77d7-4f67-9b7b-04baf85a1fa0"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="286" y="0" width="56" height="20" uuid="916b862c-894c-4ec3-a1e7-c7fba1e27b7d"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Apellidos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="82" y="0" width="72" height="20" uuid="995a94a0-eb37-4fc6-8dc6-9e174b1a8a98"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="37" splitType="Stretch">
+			<textField>
+				<reportElement x="192" y="10" width="71" height="20" uuid="fb82b02a-555f-480d-a9a3-df12f80e8511"/>
+				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="286" y="10" width="139" height="20" uuid="55a44e26-ef95-4bd6-9c6f-e305579b2f4c"/>
+				<textFieldExpression><![CDATA[$F{apellidos}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="82" y="10" width="100" height="20" uuid="6a0290b3-076a-45b6-b4a5-9628a4aab5bb"/>
+				<textFieldExpression><![CDATA[$F{codprofesor}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,4 +1,4 @@
---CREATE DATABASE IF EXISTS supermercado
+--CREATE DATABASE IF NOT EXISTS supermercado
 --Crear la base de datos, su conexion, y en dicha conexion las siguientes tablas
 
 CREATE TABLE CATEGORIAS(

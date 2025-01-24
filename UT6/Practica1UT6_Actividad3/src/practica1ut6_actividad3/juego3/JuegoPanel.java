@@ -16,7 +16,7 @@ import javax.swing.Timer;
  * @author Tarde
  */
 public class JuegoPanel extends javax.swing.JPanel implements ActionListener{
-    private int x=200, y=100;
+    public int x=200, y=100, size=30;
     public int velX=0,velY=0;
     private Timer timer;
     /**
@@ -55,7 +55,7 @@ public class JuegoPanel extends javax.swing.JPanel implements ActionListener{
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         g.setColor(Color.red);
-        g.fillOval(x, y, 30,30);
+        g.fillOval(x, y, size,size);
     }
 
     @Override
@@ -66,6 +66,10 @@ public class JuegoPanel extends javax.swing.JPanel implements ActionListener{
     private void mover(){
         x+=velX;
         y+=velY;
+        if(this.y<=(0)) this.y+=Math.abs(velY);
+        if(this.y>=(this.getHeight()-this.size))this.y-=Math.abs(velY);
+        if(this.x<=(0))this.x+=Math.abs(velX);
+        if(this.x>=(this.getWidth()-this.size))this.x-=Math.abs(velX);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

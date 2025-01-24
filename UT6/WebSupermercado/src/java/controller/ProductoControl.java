@@ -37,7 +37,7 @@ public class ProductoControl extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet ProductoControl</title>");            
+            out.println("<title>Servlet ProductoControl</title>");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet ProductoControl at " + request.getContextPath() + "</h1>");
@@ -70,35 +70,47 @@ public class ProductoControl extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
-        int codigo=Integer.parseInt(request.getParameter("codigo"));
-        String nombre=request.getParameter("nombre");
-        String descripcion=request.getParameter("descripcion");
-        int cantidad=Integer.parseInt(request.getParameter("cantidad"));
-        float precio=Float.parseFloat(request.getParameter("precio"));
-        int categoria=Integer.parseInt(request.getParameter("categoria"));
-        String proveedor=request.getParameter("proveedor");
-        
-        String accion=request.getParameter("accion").toLowerCase();
-        
-        Producto prod=new Producto(codigo,nombre,descripcion,cantidad,precio,categoria,proveedor);
-        
-        switch(accion){
-            case "registrar":
-                if(ProductoDao.registrarProducto(prod))request.setAttribute("mensaje", "Producto registrado");
-                else request.setAttribute("mensaje", "Producto NO registrado");
-                break;
-            case "actualizar":
-                if(ProductoDao.actualizarProducto(prod))request.setAttribute("mensaje", "Producto actualizado");
-                else request.setAttribute("mensaje", "Producto NO actualizado");
-                break;
-            case "eliminar":
-                if(ProductoDao.borrarProducto(prod))request.setAttribute("mensaje", "Producto eliminado");
-                else request.setAttribute("mensaje", "Producto NO eliminado");
-                break;
-            default:
-                request.setAttribute("mensaje", "Accion desconocida");
-                break;
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        try {
+            int codigo = Integer.parseInt(request.getParameter("codigo"));
+            String nombre = request.getParameter("nombre");
+            String descripcion = request.getParameter("descripcion");
+            int cantidad = Integer.parseInt(request.getParameter("cantidad"));
+            float precio = Float.parseFloat(request.getParameter("precio"));
+            int categoria = Integer.parseInt(request.getParameter("categoria"));
+            String proveedor = request.getParameter("proveedor");
+            String accion = request.getParameter("accion").toLowerCase();
+
+            Producto prod = new Producto(codigo, nombre, descripcion, cantidad, precio, categoria, proveedor);
+
+            switch (accion) {
+                case "registrar":
+                    if (ProductoDao.registrarProducto(prod)) {
+                        request.setAttribute("mensaje", "Producto registrado");
+                    } else {
+                        request.setAttribute("mensaje", "Producto NO registrado");
+                    }
+                    break;
+                case "actualizar":
+                    if (ProductoDao.actualizarProducto(prod)) {
+                        request.setAttribute("mensaje", "Producto actualizado");
+                    } else {
+                        request.setAttribute("mensaje", "Producto NO actualizado");
+                    }
+                    break;
+                case "eliminar":
+                    if (ProductoDao.borrarProducto(prod)) {
+                        request.setAttribute("mensaje", "Producto eliminado");
+                    } else {
+                        request.setAttribute("mensaje", "Producto NO eliminado");
+                    }
+                    break;
+                default:
+                    request.setAttribute("mensaje", "Accion desconocida");
+                    break;
+            }
+        } catch (Exception e) {
+            request.setAttribute("mensaje", "Ocurrio un error");
         }
         request.getRequestDispatcher("RegistroProducto.jsp").forward(request, response);
     }

@@ -62,6 +62,7 @@ public class JuegoPanel extends javax.swing.JPanel implements ActionListener{
     }// </editor-fold>//GEN-END:initComponents
     public void mover(){
         x+=velX;
+        if(x<0 || x>this.getWidth()) x-=velX;
     }
 
     @Override
