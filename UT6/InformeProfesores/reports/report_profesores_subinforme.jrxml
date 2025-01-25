@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report_profesores_subinforme" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e52de3e4-f5f1-47f4-bc8a-20672249441b">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="CODPROFESOR" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT * FROM ALUMNOS A WHERE A.CODALUMNO IN (SELECT PA.CODALUMNO FROM PROFESORES_ALUMNOS PA WHERE CODPROFESOR=$P{CODPROFESOR});]]>
+	</queryString>
+	<field name="codalumno" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombre" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="apellidos" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="notaMedia" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="27" splitType="Stretch">
+			<textField>
+				<reportElement x="20" y="0" width="57" height="20" uuid="777668ff-67b9-4c7a-b1b5-5a6aab64a9c0"/>
+				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="77" y="0" width="100" height="20" uuid="a1069075-2036-4b85-b296-03d38bd71e3e"/>
+				<textFieldExpression><![CDATA[$F{apellidos}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report_profesores_principal" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="26ab86da-e483-4d84-8a84-9c29b2778302">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="CODPROFESOR" class="java.lang.String"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Users\\Usuario\\Documents\\NetBeans Projects\\DIDAM2\\UT6\\InformeProfesores\\reports\\"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT * FROM PROFESORES WHERE CODPROFESOR=$P{CODPROFESOR};]]>
+	</queryString>
+	<field name="codprofesor" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombre" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="apellidos" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="asignatura" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="50" splitType="Stretch">
+			<staticText>
+				<reportElement x="156" y="0" width="286" height="37" uuid="33b407b8-ba07-4fae-a627-2c0fc09b54d4"/>
+				<textElement>
+					<font size="26" isBold="true"/>
+				</textElement>
+				<text><![CDATA[INFORME PROFESOR]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="105" splitType="Stretch">
+			<textField>
+				<reportElement x="36" y="48" width="133" height="20" uuid="78b0ff88-f02b-4285-b67c-4f6ba2530bcb"/>
+				<textFieldExpression><![CDATA["Alumnos de "+$F{nombre}]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement x="183" y="0" width="352" height="97" uuid="9bfa6d5d-2897-4fa5-b666-d779ee29d419"/>
+				<subreportParameter name="CODPROFESOR">
+					<subreportParameterExpression><![CDATA[$F{codprofesor}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["report_profesores_subinforme.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="42" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="56" y="2" width="100" height="20" backcolor="#E4E6FF" uuid="ecb4992f-96ab-4eea-8daa-d92d2de5e9f1"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Codigo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="169" y="2" width="100" height="20" backcolor="#E4E6FF" uuid="6430037c-5609-44d7-8cd2-8f21cc83bc1f"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="283" y="2" width="100" height="20" backcolor="#E4E6FF" uuid="d25b48d4-7f91-4326-8ad5-4fc8799f943b"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Apellidos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="394" y="2" width="100" height="20" backcolor="#E4E6FF" uuid="aea4d839-3a85-4a4b-a94e-aaf24792e357"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Asignatura]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="56" splitType="Stretch">
+			<textField>
+				<reportElement x="56" y="0" width="100" height="20" uuid="0a6ef206-b96e-4fdd-a919-662a00507a4d"/>
+				<textFieldExpression><![CDATA[$F{codprofesor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="169" y="0" width="100" height="20" uuid="f2bd861a-bea0-4c3c-ba5f-10fba3320688"/>
+				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="283" y="0" width="100" height="20" uuid="47dfae99-0a4e-4768-9848-8cbbc0e60f83"/>
+				<textFieldExpression><![CDATA[$F{apellidos}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="394" y="0" width="100" height="20" uuid="18ea8f80-3df3-44c4-ae44-e44d2c3ec31a"/>
+				<textFieldExpression><![CDATA[$F{asignatura}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="144" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
