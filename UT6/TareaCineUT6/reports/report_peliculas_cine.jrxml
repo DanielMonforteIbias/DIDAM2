@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report_peliculas_cine" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="3d0f5206-4ac8-4ac5-896c-a90657a6a7e1">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="IDCINE" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT P.nombrePelicula, P.idCine, G.nombreGenero FROM PELICULAS P JOIN GENEROS G ON P.idGenero=G.idGenero WHERE P.idCine=$P{IDCINE};]]>
+	</queryString>
+	<field name="nombrePelicula" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="idCine" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombreGenero" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="40" splitType="Stretch">
+			<staticText>
+				<reportElement x="10" y="10" width="100" height="20" uuid="5ad64dc1-9c0e-4e76-8c60-31baea5aaba6"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PELICULAS]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="27" splitType="Stretch">
+			<textField>
+				<reportElement x="10" y="0" width="100" height="20" uuid="2f33f47f-4a82-404f-afa4-b80854ba996d"/>
+				<textFieldExpression><![CDATA[$F{nombrePelicula}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="153" y="0" width="100" height="20" uuid="14634e4e-74e3-46df-9e13-604ccde1257c"/>
+				<textFieldExpression><![CDATA[$F{nombreGenero}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

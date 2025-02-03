@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report_cines" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b8261a5e-24fd-4791-b770-5484528d19fc">
+	<property name="ireport.zoom" value="1.3310000000000015"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="181"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Users\\Usuario\\Documents\\NetBeans Projects\\DIDAM2\\UT6\\TareaUnidad6Cine\\reports\\"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT * FROM CINES;]]>
+	</queryString>
+	<field name="idCine" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombreCine" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="direccionCine" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="73" splitType="Stretch">
+			<staticText>
+				<reportElement x="120" y="10" width="324" height="53" uuid="4dca9617-7259-48e7-b2c7-ec42ecbbcfcb"/>
+				<textElement>
+					<font size="40" isBold="true"/>
+				</textElement>
+				<text><![CDATA[INFORME CINES]]></text>
+			</staticText>
+			<image>
+				<reportElement x="31" y="10" width="58" height="53" uuid="0f74c14f-8b71-404a-ac38-681b09ab8170"/>
+				<imageExpression><![CDATA["imgs\\cine.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="475" y="10" width="58" height="53" uuid="e919b8aa-7715-435a-844f-8129101e168e"/>
+				<imageExpression><![CDATA["imgs\\cine.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="30" y="2" width="141" height="33" uuid="0204185e-dcca-487f-976f-59a7aa53b680"/>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NOMBRE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="201" y="2" width="141" height="33" uuid="29e1381c-0988-435b-96e2-dae5ca4ca9b2"/>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DIRECCIÓN]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="118" splitType="Stretch">
+			<textField>
+				<reportElement x="31" y="20" width="171" height="30" uuid="e30604dc-8f62-4ab3-b936-8b64a4f949ce"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombreCine}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="201" y="20" width="379" height="30" uuid="525b0064-da5c-4370-b330-956cc5ddb50b"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{direccionCine}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="-5" y="20" width="36" height="30" uuid="278a6ccd-0a8a-497b-a8db-e9c905c5417c"/>
+				<imageExpression><![CDATA["imgs\\cine2.png"]]></imageExpression>
+			</image>
+			<line>
+				<reportElement x="-5" y="0" width="555" height="1" uuid="92358b63-760f-443e-89ee-5fe9ee73f571"/>
+			</line>
+			<subreport>
+				<reportElement x="2" y="50" width="133" height="68" uuid="dd96fcd0-8822-4494-aa06-c39711d1ecd6"/>
+				<subreportParameter name="IDCINE">
+					<subreportParameterExpression><![CDATA[$F{idCine}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["report_peliculas_cine.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="154" splitType="Stretch"/>
+	</summary>
+</jasperReport>

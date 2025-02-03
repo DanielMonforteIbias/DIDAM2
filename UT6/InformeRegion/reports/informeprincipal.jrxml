@@ -30,10 +30,6 @@
 	</background>
 	<title>
 		<band height="79" splitType="Stretch">
-			<image>
-				<reportElement x="-13" y="0" width="143" height="51" uuid="8f1efd6a-2a35-4f31-a0c4-4dcf3d2fd7eb"/>
-				<imageExpression><![CDATA["C:\\Users\\Usuario\\Documents\\NetBeans Projects\\DIDAM2\\UT6\\InformeRegion\\src\\imgs\\logo.png"]]></imageExpression>
-			</image>
 			<staticText>
 				<reportElement x="143" y="15" width="293" height="26" uuid="ba665a85-b272-4c85-9b1f-09141a67aa34"/>
 				<textElement>
@@ -41,18 +37,6 @@
 				</textElement>
 				<text><![CDATA[POKÉMON INICIALES DE KANTO]]></text>
 			</staticText>
-			<image>
-				<reportElement x="418" y="-14" width="66" height="79" uuid="8f1578cb-b738-4255-ab0e-833f1f522d5a"/>
-				<imageExpression><![CDATA["C:\\Users\\Usuario\\Documents\\NetBeans Projects\\DIDAM2\\UT6\\InformeRegion\\src\\imgs\\bulbasaur.png"]]></imageExpression>
-			</image>
-			<image>
-				<reportElement x="454" y="-14" width="66" height="79" uuid="c8709527-e94e-434a-89ab-ce165c4c0221"/>
-				<imageExpression><![CDATA["C:\\Users\\Usuario\\Documents\\NetBeans Projects\\DIDAM2\\UT6\\InformeRegion\\src\\imgs\\charmander.png"]]></imageExpression>
-			</image>
-			<image>
-				<reportElement x="489" y="-14" width="66" height="79" uuid="36c54ea3-1e22-4757-b734-8c2a294501b3"/>
-				<imageExpression><![CDATA["C:\\Users\\Usuario\\Documents\\NetBeans Projects\\DIDAM2\\UT6\\InformeRegion\\src\\imgs\\squirtle.png"]]></imageExpression>
-			</image>
 		</band>
 	</title>
 	<pageHeader>
