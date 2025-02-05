@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<toc version="1.0"> <!--  categoryclosedimage="FolderClosed" categoryopenimage="FolderOpened"  
+topicimage="ItemIco"-->
+           <tocitem text="Introduccion"    target="introduccion"/>
+        <tocitem text="Inicio de sesion"    target="inicio_sesion"/>
+        <tocitem text="Comprar entrada"    target="comprar_entrada"/>
+	<tocitem text="Ver cartelera"    target="ver_cartelera"/>
+	<tocitem text="Mis compras"    target="mis_compras"/>
+	<tocitem text="Acerca de"    target="acercade"/>
+
+</toc>
